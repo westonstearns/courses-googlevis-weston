@@ -95,7 +95,13 @@ test_object("gdp",
             undefined_msg = "Did you assign to `gdp` to the evolution of a country's gdp over the past years?",
             incorrect_msg = "Have a look at how the variable `life_expectancy` is created. You should do something similar for gdp.")
 test_output_contains("head(life_expectancy)", 
-                     incorrect_msg = "The output does not seem to inspect life_expectancy with <code>head()</code>  or <code>tail()</code>")
+                     incorrect_msg = "Did you print the start and/or the end of the life expectancies data frame to the console?")
+test_output_contains("tail(life_expectancy)", 
+                     incorrect_msg = "Did you print the start and/or the end of the life expectancies data frame to the console?")
+test_output_contains("head(population)", 
+                     incorrect_msg = "Did you print the start and/or the end of the populations data frame to the console?")
+test_output_contains("tail(population)", 
+                     incorrect_msg = "Did you print the start and/or the end of the population data frame to the console?")
 success_msg("Good job! Now that you've imported the data, continue to the next exercise to start the real work.")
 
 #if (!exists("life_expectancy")) {
