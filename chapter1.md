@@ -83,7 +83,9 @@ tail(population)
 *** =sct
 ```{r}
 test_error()
-test_object("life_expectancy")
+test_object("life_expectancy",
+            undefined_msg = "Did you assign to `life_expectancy` the evolution of a country's life expectancy over the past #years?"),
+            incorrect_msg = "Did you change the way to calculate the variable `life_expectancy`?")
 success_msg("Good job! Now that you've imported the data, continue to the next exercise to start the real #work.")
 
 #if (!exists("life_expectancy")) {
