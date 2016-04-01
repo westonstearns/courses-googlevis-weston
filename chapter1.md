@@ -56,7 +56,7 @@ life_expectancy <- dmlist("15r2!hrp")
 # Load in the yearly GDP data frame for each country as 'gdp'
 gdp <- 
 
-# Inspect the variable `population`.
+# Load in the yearly population data frame for each country as 'population'
 population <- 
 ```
 
