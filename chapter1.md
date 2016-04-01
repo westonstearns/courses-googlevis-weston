@@ -217,6 +217,7 @@ test_object("life_expectancy",
 test_object("population",
             undefined_msg = "Have a look at how the column values of `gdp` were renamed. Do the same for `population`.",
             incorrect_msg = "Have a look at how the column values of `gdp` were renamed. Do the same for `population`.")
+
 #test_or(
 #            test_function("join", 
 #            test_output_contains("tail(life_expectancy)"),
