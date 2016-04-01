@@ -82,23 +82,23 @@ tail(population)
 
 *** =sct
 ```{r}
-if (!exists("life_expectancy")) {
-  DM.result = list(FALSE,"Did you assign to `life_expectancy` the evolution of a country's life expectancy over the past years?")
-} else if (! exists("gdp")) {
-  DM.result = list(FALSE,"Did you assign to `gdp` the evolution of a country's GDP over the past years? Use `dmlist()` to do this.")   
-} else if (! (student_typed("dminit(NULL)"))) {
-  DM.result = list(FALSE,"Make sure to initialize the DataMarket client with the help of `dminit()`. Remember, API key is not required.")
-} else if (! identical(life_expectancy, correct_life_expectancy)){
-  DM.result = list(FALSE, "Did you change the way to calculate the variable `life_expectancy`?")
-} else if ( ! identical(gdp, correct_gdp) ){
-  DM.result = list(FALSE, "Hava a look at how the variable `life_expectancy` is created. You need to do something similar for gdp.")
-} else if ((! output_contains("head(life_expectancy)")) && (! output_contains("tail(life_expectancy)"))) {
-  DM.result = list(FALSE,"Did you print the start and/or the end of the life expectancies to the console?")
-} else if ((! output_contains("head(population)")) && (! output_contains("tail(population)"))) {
-  DM.result = list(FALSE,"Did you print the start and/or the end of the country's population to the console?")
-} else {
-  DM.result = list(TRUE,"Good job! Now that you've imported the data, continue to the next exercise to start the real work.")
-}
+#if (!exists("life_expectancy")) {
+#  DM.result = list(FALSE,"Did you assign to `life_expectancy` the evolution of a country's life expectancy over the past #years?")
+#} else if (! exists("gdp")) {
+#  DM.result = list(FALSE,"Did you assign to `gdp` the evolution of a country's GDP over the past years? Use `dmlist()` to #do this.")   
+#} else if (! (student_typed("dminit(NULL)"))) {
+#  DM.result = list(FALSE,"Make sure to initialize the DataMarket client with the help of `dminit()`. Remember, API key is #not required.")
+#} else if (! identical(life_expectancy, correct_life_expectancy)){
+#  DM.result = list(FALSE, "Did you change the way to calculate the variable `life_expectancy`?")
+#} else if ( ! identical(gdp, correct_gdp) ){
+#  DM.result = list(FALSE, "Hava a look at how the variable `life_expectancy` is created. You need to do something similar #for gdp.")
+#} else if ((! output_contains("head(life_expectancy)")) && (! output_contains("tail(life_expectancy)"))) {
+#  DM.result = list(FALSE,"Did you print the start and/or the end of the life expectancies to the console?")
+#} else if ((! output_contains("head(population)")) && (! output_contains("tail(population)"))) {
+#  DM.result = list(FALSE,"Did you print the start and/or the end of the country's population to the console?")
+#} else {
+#  DM.result = list(TRUE,"Good job! Now that you've imported the data, continue to the next exercise to start the real #work.")
+#}
 ```
 
 --- type:NormalExercise lang:r xp:100 skills:1,4
