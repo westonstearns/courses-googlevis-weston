@@ -57,7 +57,7 @@ life_expectancy <- dmlist("15r2!hrp")
 # Load in the yearly GDP data frame for each country as 'gdp'
 gdp <- 
 
-# Load in the yearly population data frame for each country as 'population'
+# The variable 'population' has been pre-loaded. Inspect it with head() and/or tail()
 
 ```
 
@@ -79,14 +79,7 @@ tail(life_expectancy)
 # Load in the yearly gdp data frame for each country
 gdp <- dmlist("15c9!hd1")
 
-# Inspect the variable gdp
-head(gdp)
-tail(gdp)
-
-# Load in the yearly population data frame for each country
-population <- dmlist("1cfl!r3d")
-
-# Inspect the variable population.
+# # The variable 'population' has been pre-loaded. Inspect it with head() and/or tail()
 head(population)
 tail(population)
 ```
