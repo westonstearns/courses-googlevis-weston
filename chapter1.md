@@ -94,9 +94,8 @@ test_object("life_expectancy",
 test_object("gdp",
             undefined_msg = "Did you assign to `gdp` to the evolution of a country's gdp over the past years?",
             incorrect_msg = "Have a look at how the variable `life_expectancy` is created. You should do something similar for gdp.")
-#test_object("population",
-#            undefined_msg = "Did you assign to `gdp` to the evolution of a country'",
-#            incorrect_msg = "Have a look at how the variable `life_expectancy` is created. You should do something similar #for gdp.")
+test_output_contains("head(life_expectancy)", 
+                     incorrect_msg = "The output does not contain either <code>head(life_expectancy)</code>  or <code>tail(life_expectancy)</code>")
 success_msg("Good job! Now that you've imported the data, continue to the next exercise to start the real work.")
 
 #if (!exists("life_expectancy")) {
