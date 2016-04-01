@@ -214,7 +214,16 @@ test_object("gdp",
 test_object("life_expectancy",
             undefined_msg = "Have a look at how the column values of `gdp` were renamed. Do the same for `life_expectancy`.",
             incorrect_msg = "Have a look at how the column values of `gdp` were renamed. Do the same for `life_expectancy`.")
-
+test_object("population",
+            undefined_msg = "Have a look at how the column values of `gdp` were renamed. Do the same for `population`.",
+            incorrect_msg = "Have a look at how the column values of `gdp` were renamed. Do the same for `population`.")
+#test_or(
+#            test_function("join", 
+#            test_output_contains("tail(life_expectancy)"),
+#                     incorrect_msg = "Did you print the start and/or the end of the life expectancies data frame to the #console?")
+test_object("development",
+            undefined_msg = "Seems like you made a mistake when merging the data frames. Have a look at the hint if you need any help.",
+            incorrect_msg = "Seems like you made a mistake when merging the data frames. Have a look at the hint if you need any help.")
 
 #if (! (names(gdp)[3] == "GDP")){
 #  DM.result = list(FALSE,"Seems like you changed the code to rename the column values of `gdp`.")
