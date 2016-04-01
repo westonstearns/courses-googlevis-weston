@@ -81,7 +81,7 @@ head(gdp)
 tail(gdp)
 
 # Load in the yearly population data frame for each country
-population = dmlist("1cfl!r3d")
+population <- dmlist("1cfl!r3d")
 
 # Inspect the variable population.
 head(population)
