@@ -37,6 +37,7 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/googlevis/googlevis
 # correct_life_expectancy = dmlist("15r2!hrp")
 # correct_gdp = dmlist("15c9!hd1")
 # subset van population = dmlist("1cfl!r3d")
+population <- dmlist("1cfl!r3d")
 ```
 
 *** =sample_code
@@ -57,7 +58,7 @@ life_expectancy <- dmlist("15r2!hrp")
 gdp <- 
 
 # Load in the yearly population data frame for each country as 'population'
-population <-
+
 ```
 
 *** =solution
