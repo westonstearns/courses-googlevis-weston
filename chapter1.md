@@ -22,9 +22,9 @@ First, you will need to load data on a country's evolution of life expectancy, G
 
 *** =instructions
 - Initialize a DataMarket client using the provided command. 
-- The code to load in the yearly life expectancy data for countries is provided. Inspect the data frame `life_expectancy` with `head()` and/or `tail`.  
+- The code to load in the yearly life expectancy data for countries is provided. Inspect the data frame `life_expectancy` with `head()` and/or `tail()`.  
 - Load in the yearly GDP (ID: 15c9!hd1) data frame for each country yourself. Assign the results to the variable `gdp`. 
-- The yearly population for each country is loaded and assigned to the variable `population`. Inspect this data frame with `head()` and/or `tail`.    
+- The yearly population for each country is loaded and assigned to the variable `population`. Inspect this data frame with `head()` and/or `tail()`.    
 
 *** =hint
 Have a look at the code for `life_expectancy` on how to load `gdp` and `population`. Do not forget, no API key is required. 
@@ -95,7 +95,7 @@ test_object("gdp",
             undefined_msg = "Did you assign to `gdp` to the evolution of a country's gdp over the past years?",
             incorrect_msg = "Have a look at how the variable `life_expectancy` is created. You should do something similar for gdp.")
 test_output_contains("head(life_expectancy)", 
-                     incorrect_msg = "The output does not contain either <code>head(life_expectancy)</code>  or <code>tail(life_expectancy)</code>")
+                     incorrect_msg = "The output does not seem to inspect life_expectancy with <code>head()</code>  or <code>tail()</code>")
 success_msg("Good job! Now that you've imported the data, continue to the next exercise to start the real work.")
 
 #if (!exists("life_expectancy")) {
