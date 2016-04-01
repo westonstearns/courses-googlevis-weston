@@ -82,6 +82,7 @@ tail(population)
 
 *** =sct
 ```{r}
+test_error()
 test_object("life_expectancy")
 success_msg("Good job! Now that you've imported the data, continue to the next exercise to start the real #work.")
 
