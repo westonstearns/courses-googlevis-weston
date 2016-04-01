@@ -222,6 +222,8 @@ test_object("population",
 #            test_function("join", 
 #            test_output_contains("tail(life_expectancy)"),
 #                     incorrect_msg = "Did you print the start and/or the end of the life expectancies data frame to the #console?")
+test_function("join", 
+            incorrect_msg = "Looks like you did not use the join() formula to merge your data frames.")
 test_object("development",
             undefined_msg = "Seems like you made a mistake when merging the data frames. Have a look at the hint if you need any help.",
             incorrect_msg = "Seems like you made a mistake when merging the data frames. Have a look at the hint if you need any help.")
