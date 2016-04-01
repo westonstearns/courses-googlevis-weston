@@ -47,15 +47,17 @@ library("rdatamarket")
 # Initialize a DataMarket client
 dminit(NULL)
 
-# Inspect the variable `life_expectancy`
+# Load in the yearly life expectancy data frame for each country as 'life_expectancy'
 life_expectancy <- dmlist("15r2!hrp")
 
-# Load in the yearly GDP data frame for each country
-gdp <-
+# Inspect `life_expectancy` with head() and/or tail()
+
+
+# Load in the yearly GDP data frame for each country as 'gdp'
+gdp <- 
 
 # Inspect the variable `population`.
-population
-
+population <- 
 ```
 
 *** =solution
