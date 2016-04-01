@@ -1,6 +1,6 @@
-title            : Template R DataCamp Course
-author_field     : westonstearns
-description      : This is an automatically generated demo course which will help you on your way to create an awesome DataCamp course.
+title            : Demo course on the googleVis package
+author_field     : DataCamp for Markus Gesmann
+description      : The googleVis package provides an interface between R and the Google Chart Tools API. It allows users to create web pages with interactive charts based on R data frames using the Google Chart Tools and to display them either via the local R HTTP help server or within their own sites without uploading the data to Google.
 author_bio       : westonstearns is an awesome DataCamp course creator.<br>You can tell something about yourself <strong>here</strong>.
 university       : DataCamp
 difficulty_level : 2
