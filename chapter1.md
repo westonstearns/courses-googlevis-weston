@@ -12,13 +12,13 @@ description : In this chapter you will be introduced to gooleVis for R.
 --- type:NormalExercise lang:r xp:100 skills:1,4
 ##  Loading in your data
 
-What you just saw, was one of the most famous ted talks on data and statistics. With the drama and urgency of a sportscaster, statistics guru [Hans Rosling](http://www.ted.com/speakers/hans_rosling) debunks myths about the so-called "developing world". But what sets Rosling apart isn't just his apt observations of broad social and economic trends, but the stunning way he presents them. Have you ever seen data presented like this? The data sings, trends come to life, and the big picture snaps into sharp focus.
+What you just saw was one of the most famous ted talks on data and statistics. With the drama and urgency of a sportscaster, statistics guru [Hans Rosling](http://www.ted.com/speakers/hans_rosling) debunks myths about the so-called "developing world". But what sets Rosling apart isn't just his apt observations of broad social and economic trends, but the stunning way he presents them. Have you ever seen data presented like this? The data sings, trends come to life, and the big picture snaps into sharp focus.
 
 In this demo chapter, you will learn how to DIY with the help of R. Step-by-step you will transform development statistics into moving bubbles and flowing curves that make global trends clear, intuitive and even playful.
 
 First, you will need to load data on a country's evolution of life expectancy, GDP and population over the past years into R. We can get this data by using [DataMarket](https://datamarket.com/), a company that lets you freely search public data and load it into R with the [`rdatamarket`](http://www.rdocumentation.org/packages/rdatamarket/functions/rdatamarket-package) package. For the data you'll be using here, no account is needed. You will be using two R functions in this exercise:
 - [`dminit()`](http://www.rdocumentation.org/packages/rdatamarket/functions/dminit) to initialize a DataMarket client with an API key. Access to public datasets does not require such key, so you can provide the value `NULL`.     
-- [`dlist()`](http://www.rdocumentation.org/packages/rdatamarket/functions/dmlist) requires the ID of the dataset you need, and will return a `data.frame` object.  
+- [`dmlist()`](http://www.rdocumentation.org/packages/rdatamarket/functions/dmlist) requires the ID of the dataset you need, and will return a `data.frame` object.  
 
 *** =instructions
 - Initialize a DataMarket client using the provided command. 
