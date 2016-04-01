@@ -98,13 +98,16 @@ test_or(
             test_output_contains("head(life_expectancy)"), 
             test_output_contains("tail(life_expectancy)"),
                      incorrect_msg = "Did you print the start and/or the end of the life expectancies data frame to the console?")
-#test_output_contains("tail(life_expectancy)", 
-#                     incorrect_msg = "Did you print the start and/or the end of the life expectancies data frame to the #console?")
-test_output_contains("head(population)", 
-                     incorrect_msg = "Did you print the start and/or the end of the populations data frame to the console?")
-test_output_contains("tail(population)", 
+test_or(
+            test_output_contains("head(population)"), 
+            test_output_contains("tail(population)"),
                      incorrect_msg = "Did you print the start and/or the end of the population data frame to the console?")
-success_msg("Good job! Now that you've imported the data, continue to the next exercise to start the real work.")
+
+#test_output_contains("head(population)", 
+#                     incorrect_msg = "Did you print the start and/or the end of the populations data frame to the #console?")
+#test_output_contains("tail(population)", 
+#                     incorrect_msg = "Did you print the start and/or the end of the population data frame to the console?")
+#success_msg("Good job! Now that you've imported the data, continue to the next exercise to start the real work.")
 
 #if (!exists("life_expectancy")) {
 #  DM.result = list(FALSE,"Did you assign to `life_expectancy` the evolution of a country's life expectancy over the past #years?")
