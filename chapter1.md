@@ -227,7 +227,9 @@ test_function("join",
 test_object("development",
             undefined_msg = "Seems like you made a mistake when merging the data frames. Have a look at the hint if you need any help.",
             incorrect_msg = "Seems like you made a mistake when merging the data frames. Have a look at the hint if you need any help.")
-
+test_object("development_final",
+            undefined_msg = "Did you assign 'development_final'",
+            incorrect_msg = "Do not forget to take a subset from `development`, excluding all data beyond 2008. Type #`?subset` in the console for more help.")
 
 #if (! (names(gdp)[3] == "GDP")){
 #  DM.result = list(FALSE,"Seems like you changed the code to rename the column values of `gdp`.")
