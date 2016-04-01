@@ -208,23 +208,31 @@ development_final <- development[development$Year <= 2008,]
 
 *** =sct
 ```{r}
-if (! (names(gdp)[3] == "GDP")){
-  DM.result = list(FALSE,"Seems like you changed the code to rename the column values of `gdp`.")
-} else if (! (names(life_expectancy)[3] == "Life Expectancy")){
-  DM.result = list(FALSE,"Have a look at how the column values of `gdp` were renamed. Do the same for `life_expectancy`.")
-} else if (! (names(population)[3] == "Population")){
-  DM.result = list(FALSE,"Have a look at how the column values of `gdp` were renamed. Do the same for `population`.")
-} else if(! "join" %in% called_functions()) {
-  DM.result = list(FALSE,"Looks like you did not use the join() formula to merge your data frames.")
-} else if (! isTRUE(try(all.equal(development,correct_development)))){
-    DM.result = list(FALSE,"Seems like you made a mistake when merging the data frames. Have a look at the hint if you need any help.") 
-} else if (! exists("development_final")) {
-  DM.result = list(FALSE,"Did you assign `development_final`?")   
-} else if (! isTRUE(try(all.equal(development_final,development[development$Year <= 2008,])))){
-    DM.result = list(FALSE,"Do not forget to take a subset from `development`, excluding all data beyond 2008. Type `?subset` in the console for more help.") 
-} else {
-  DM.result = list(TRUE,"Looks like your data is ready to rumble! Time to make Hans Rosling proud.")
-}
+test_object("gdp",
+            undefined_msg = "It seems like you changed the code to rename the column values of `gdp`.",
+            incorrect_msg = "It seems like you changed the code to rename the column values of `gdp`.")
+test_object("life_expectancy",
+            undefined_msg = "Have a look at how the column values of `gdp` were renamed. Do the same for `life_expectancy`.",
+            incorrect_msg = "Have a look at how the column values of `gdp` were renamed. Do the same for `life_expectancy`.")
+
+
+#if (! (names(gdp)[3] == "GDP")){
+#  DM.result = list(FALSE,"Seems like you changed the code to rename the column values of `gdp`.")
+#} else if (! (names(life_expectancy)[3] == "Life Expectancy")){
+#  DM.result = list(FALSE,"Have a look at how the column values of `gdp` were renamed. Do the same for `life_expectancy`.")
+#} else if (! (names(population)[3] == "Population")){
+#  DM.result = list(FALSE,"Have a look at how the column values of `gdp` were renamed. Do the same for `population`.")
+#} else if(! "join" %in% called_functions()) {
+#  DM.result = list(FALSE,"Looks like you did not use the join() formula to merge your data frames.")
+#} else if (! isTRUE(try(all.equal(development,correct_development)))){
+#    DM.result = list(FALSE,"Seems like you made a mistake when merging the data frames. Have a look at the hint if you need #any help.") 
+#} else if (! exists("development_final")) {
+#  DM.result = list(FALSE,"Did you assign `development_final`?")   
+#} else if (! isTRUE(try(all.equal(development_final,development[development$Year <= 2008,])))){
+#    DM.result = list(FALSE,"Do not forget to take a subset from `development`, excluding all data beyond 2008. Type #`?subset` in the console for more help.") 
+#} else {
+#  DM.result = list(TRUE,"Looks like your data is ready to rumble! Time to make Hans Rosling proud.")
+#}
 ```
 
 --- type:NormalExercise lang:r xp:100 skills:1,4
