@@ -82,6 +82,9 @@ tail(population)
 
 *** =sct
 ```{r}
+test_object("life_expectancy")
+success_msg(""Good job! Now that you've imported the data, continue to the next exercise to start the real #work.")
+
 #if (!exists("life_expectancy")) {
 #  DM.result = list(FALSE,"Did you assign to `life_expectancy` the evolution of a country's life expectancy over the past #years?")
 #} else if (! exists("gdp")) {
