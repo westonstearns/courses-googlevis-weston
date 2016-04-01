@@ -98,7 +98,6 @@ test_or(
             test_output_contains("head(life_expectancy)"), 
             test_output_contains("tail(life_expectancy)"),
                      incorrect_msg = "Did you print the start and/or the end of the life expectancies data frame to the console?")
-            )
 #test_output_contains("tail(life_expectancy)", 
 #                     incorrect_msg = "Did you print the start and/or the end of the life expectancies data frame to the #console?")
 test_output_contains("head(population)", 
