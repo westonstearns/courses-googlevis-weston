@@ -180,7 +180,7 @@ names(gdp)[3] <- "GDP"
 
 
 # Use plyr to join your three data frames into one: development 
-development <- join(___, ___)
+development <- join(gdp, ___)
 development <- join(___, ___)
 
 #Make sure no data beyond 2008 is included
@@ -221,7 +221,7 @@ test_object("population",
 #            test_function("join", 
 #            test_output_contains("tail(life_expectancy)"),
 #                     incorrect_msg = "Did you print the start and/or the end of the life expectancies data frame to the #console?")
-test_object("development", eq_condition = "like",
+test_object("development",
             undefined_msg = "Seems like you made a mistake when merging the data frames. Have a look at the hint if you need any help.",
             incorrect_msg = "Seems like you made a mistake when merging the data frames. Have a look at the hint if you need any help.")
 
