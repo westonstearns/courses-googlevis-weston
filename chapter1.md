@@ -269,7 +269,7 @@ The `gvisMotionChart()` function in its simplest form takes 3 arguments. The fir
 The `idvar` argument should be equal to "Country" and the `timevar` argument to "Year". Your function will now look something like `gvisMotionChart(data,idvar = "Country",timevar = "Year"). 
 
 *** =pre_exercise_code
-```{r}
+```{r,eval=FALSE}
 library("rdatamarket")
 library("plyr")
 library("ggvis")
@@ -304,7 +304,7 @@ my_motion_graph = gvisMotionChart(___,___,___)
 ```
 
 *** =solution
-```{r}
+```{r,eval=FALSE}
 # Include only the countries from `selection` in the interactive motion chart
 selection
 development_motion = subset(development_final, Country %in% selection)
@@ -320,7 +320,7 @@ plot(my_motion_graph)
 ```
 
 *** =sct
-```{r}
+```{r,eval=FALSE}
 gvisMotionChart_args = c("data","idvar","timevar")
 student_gvisMotionChart_args =try(names(get_arguments("gvisMotionChart")[[1]]))
 standard_feedback_message = "Looks like you forgot to set in `gvisMotionChart()` the arguments"
