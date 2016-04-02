@@ -272,6 +272,7 @@ The `idvar` argument should be equal to "Country" and the `timevar` argument to 
 ```{r}
 library("rdatamarket")
 library("plyr")
+library("ggvis")
 library("googleVis")
 options(gvis.plot.tag = 'chart')
 load(url("http://s3.amazonaws.com/assets.datacamp.com/course/googlevis/googlevis_ex3.RData"))
