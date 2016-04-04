@@ -88,25 +88,27 @@ tail(population)
 *** =sct
 ```{r}
 test_error()
+
+# Instruction 1 and 2
 test_object("life_expectancy",
             undefined_msg = "Did you assign to `life_expectancy` to the evolution of a country's life expectancy over the past years?",
             incorrect_msg = "Did you change the way to calculate the variable `life_expectancy`?")
-test_object("gdp",
-            undefined_msg = "Did you assign to `gdp` to the evolution of a country's gdp over the past years?",
-            incorrect_msg = "Have a look at how the variable `life_expectancy` is created. You should do something similar for gdp.")
 test_or(
             test_output_contains("head(life_expectancy)"), 
             test_output_contains("tail(life_expectancy)"),
                      incorrect_msg = "Did you print the start and/or the end of the life expectancies data frame to the console?")
+   
+# Instruction 3
+test_object("gdp",
+            undefined_msg = "Did you assign to `gdp` to the evolution of a country's gdp over the past years?",
+            incorrect_msg = "Have a look at how the variable `life_expectancy` is created. You should do something similar for gdp.")
+
+# Instruction 4
 test_or(
             test_output_contains("head(population)"), 
             test_output_contains("tail(population)"),
                      incorrect_msg = "Did you print the start and/or the end of the population data frame to the console?")
 
-#test_output_contains("head(population)", 
-#                     incorrect_msg = "Did you print the start and/or the end of the populations data frame to the #console?")
-#test_output_contains("tail(population)", 
-#                     incorrect_msg = "Did you print the start and/or the end of the population data frame to the console?")
 success_msg("Good job! Now that you've imported the data, continue to the next exercise to start the real work.")
 
 #if (!exists("life_expectancy")) {
@@ -208,6 +210,9 @@ development_final <- development[development$Year <= 2008,]
 
 *** =sct
 ```{r}
+test_error()
+
+# Instruction 1
 test_data_frame("gdp",
             undefined_msg = "It seems like you changed the code to rename the column values of `gdp`.",
             undefined_cols_msg = "It seems like you changed the code to rename the column values of `gdp`.")
@@ -218,18 +223,19 @@ test_data_frame("population",
             undefined_msg = "Have a look at how the column values of `gdp` were renamed. Do the same for `population`.",
             undefined_cols_msg = "Have a look at how the column values of `gdp` were renamed. Do the same for `population`.")
 
-#test_or(
-#            test_function("join", 
-#            test_output_contains("tail(life_expectancy)"),
-#                     incorrect_msg = "Did you print the start and/or the end of the life expectancies data frame to the #console?")
+# Instruction 2
 test_function("join", 
             incorrect_msg = "Looks like you did not use the join() formula to merge your data frames.")
 test_object("development",
             undefined_msg = "Seems like you made a mistake when merging the data frames. Have a look at the hint if you need any help.",
             incorrect_msg = "Seems like you made a mistake when merging the data frames. Have a look at the hint if you need any help.")
+
+# Instruction 3
 test_object("development_final",
             undefined_msg = "Did you assign 'development_final'",
             incorrect_msg = "Do not forget to take a subset from `development`, excluding all data beyond 2008. Type `?subset` in the console for more help.")
+
+success_msg("Looks like your data is ready to rumble! Time to make Hans Rosling proud.")
 
 #if (! (names(gdp)[3] == "GDP")){
 #  DM.result = list(FALSE,"Seems like you changed the code to rename the column values of `gdp`.")
@@ -328,6 +334,7 @@ plot(my_motion_graph)
 #student_gvisMotionChart_values = try(get_arguments("gvisMotionChart")[[1]]) 
 #standard_feedback_message2 = "Looks like you set the wrong argument values in `gvisMotionChart()`:"
 
+test_error()
 # Instruction 1
 test_object("development_motion",
             undefined_msg = "Make sure you have taken a subset from `development_final` including only the countries in `selection`.",
