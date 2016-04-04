@@ -210,10 +210,10 @@ development_final <- development[development$Year <= 2008,]
 ```{r}
 test_data_frame("gdp",
             undefined_msg = "It seems like you changed the code to rename the column values of `gdp`.",
-            incorrect_msg = "It seems like you changed the code to rename the column values of `gdp`.")
+            undefined_cols_msg = "It seems like you changed the code to rename the column values of `gdp`.")
 test_data_frame("life_expectancy",
             undefined_msg = "Have a look at how the column values of `gdp` were renamed. Do the same for `life_expectancy`.",
-            incorrect_msg = "Have a look at how the column values of `gdp` were renamed. Do the same for `life_expectancy`.")
+            undefined_cols_msg = "Have a look at how the column values of `gdp` were renamed. Do the same for `life_expectancy`.")
 test_data_frame("population",
             undefined_msg = "Have a look at how the column values of `gdp` were renamed. Do the same for `population`.",
             undefined_cols_msg = "Have a look at how the column values of `gdp` were renamed. Do the same for `population`.")
