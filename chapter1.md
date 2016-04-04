@@ -341,7 +341,7 @@ test_object("development_motion",
             incorrect_msg = "You still need to work with a subset from `development_final`. Use the `subset()` function and the `selection` variable. ")
 
 # Instructions 2 and 3
-test_function("gvisMotionChart", c("data", "idvar", "timevar) , eval = FALSE, 
+test_function("gvisMotionChart", c("data", "idvar", "timevar") , eval = FALSE, 
               not_called_msg = "You should use the `gvisMotionChart()` function in this exercise.",
               incorrect_msg = "Mmmm. There is something fishy with your `gvisMotionChart()` function. It doesn't return a result. Check the hint if you need help.")
 
