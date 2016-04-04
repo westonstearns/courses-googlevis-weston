@@ -33,10 +33,6 @@ Have a look at the code for `life_expectancy` on how to load `gdp` and `populati
 ```{r,eval=FALSE}
 library("rdatamarket")
 load(url("http://s3.amazonaws.com/assets.datacamp.com/course/googlevis/googlevis_ex1.RData"))
-
-# correct_life_expectancy = dmlist("15r2!hrp")
-# correct_gdp = dmlist("15c9!hd1")
-# subset van population = dmlist("1cfl!r3d")
 population <- dmlist("1cfl!r3d")
 ```
 
@@ -110,24 +106,6 @@ test_or(
                              incorrect_msg = "Did you print the start and/or the end of the population data frame to the console?")
 
 success_msg("Good job! Now that you've imported the data, continue to the next exercise to start the real work.")
-
-#if (!exists("life_expectancy")) {
-#  DM.result = list(FALSE,"Did you assign to `life_expectancy` the evolution of a country's life expectancy over the past #years?")
-#} else if (! exists("gdp")) {
-#  DM.result = list(FALSE,"Did you assign to `gdp` the evolution of a country's GDP over the past years? Use `dmlist()` to #do this.")   
-#} else if (! (student_typed("dminit(NULL)"))) {
-#  DM.result = list(FALSE,"Make sure to initialize the DataMarket client with the help of `dminit()`. Remember, API key is #not required.")
-#} else if (! identical(life_expectancy, correct_life_expectancy)){
-#  DM.result = list(FALSE, "Did you change the way to calculate the variable `life_expectancy`?")
-#} else if ( ! identical(gdp, correct_gdp) ){
-#  DM.result = list(FALSE, "Hava a look at how the variable `life_expectancy` is created. You need to do something similar #for gdp.")
-#} else if ((! output_contains("head(life_expectancy)")) && (! output_contains("tail(life_expectancy)"))) {
-#  DM.result = list(FALSE,"Did you print the start and/or the end of the life expectancies to the console?")
-#} else if ((! output_contains("head(population)")) && (! output_contains("tail(population)"))) {
-#  DM.result = list(FALSE,"Did you print the start and/or the end of the country's population to the console?")
-#} else {
-#  DM.result = list(TRUE,"Good job! Now that you've imported the data, continue to the next exercise to start the real #work.")
-#}
 ```
 
 --- type:NormalExercise lang:r xp:100 skills:1,4
@@ -162,14 +140,6 @@ We only need to provide 2 arguments to the `join()` function:
 library("rdatamarket")
 library("plyr")
 load(url("http://s3.amazonaws.com/assets.datacamp.com/course/googlevis/googlevis_ex2.RData"))
-# life_expectancy = dmlist("15r2!hrp")
-# gdp = dmlist("15c9!hd1")
-# population = dmlist("1cfl!r3d")
-# names(gdp)[3] = "GDP"
-# names(life_expectancy)[3] = "Life Expectancy"
-# names(population)[3] = "Population"
-# correct_development = join(gdp,life_expectancy)
-# correct_development= join(correct_development,population)
 ```
 
 *** =sample_code
@@ -236,24 +206,6 @@ test_object("development_final",
             incorrect_msg = "Do not forget to take a subset from `development`, excluding all data beyond 2008. Type `?subset` in the console for more help.")
 
 success_msg("Looks like your data is ready to rumble! Time to make Hans Rosling proud.")
-
-#if (! (names(gdp)[3] == "GDP")){
-#  DM.result = list(FALSE,"Seems like you changed the code to rename the column values of `gdp`.")
-#} else if (! (names(life_expectancy)[3] == "Life Expectancy")){
-#  DM.result = list(FALSE,"Have a look at how the column values of `gdp` were renamed. Do the same for `life_expectancy`.")
-#} else if (! (names(population)[3] == "Population")){
-#  DM.result = list(FALSE,"Have a look at how the column values of `gdp` were renamed. Do the same for `population`.")
-#} else if(! "join" %in% called_functions()) {
-#  DM.result = list(FALSE,"Looks like you did not use the join() formula to merge your data frames.")
-#} else if (! isTRUE(try(all.equal(development,correct_development)))){
-#    DM.result = list(FALSE,"Seems like you made a mistake when merging the data frames. Have a look at the hint if you need #any help.") 
-#} else if (! exists("development_final")) {
-#  DM.result = list(FALSE,"Did you assign `development_final`?")   
-#} else if (! isTRUE(try(all.equal(development_final,development[development$Year <= 2008,])))){
-#    DM.result = list(FALSE,"Do not forget to take a subset from `development`, excluding all data beyond 2008. Type #`?subset` in the console for more help.") 
-#} else {
-#  DM.result = list(TRUE,"Looks like your data is ready to rumble! Time to make Hans Rosling proud.")
-#}
 ```
 
 --- type:NormalExercise lang:r xp:100 skills:1,4
@@ -282,17 +234,7 @@ library("ggvis")
 library("googleVis")
 options(gvis.plot.tag = 'chart')
 load(url("http://s3.amazonaws.com/assets.datacamp.com/course/googlevis/googlevis_ex3.RData"))
-#life_expectancy = dmlist("15r2!hrp")
-#gdp = dmlist("15c9!hd1")
-#population = dmlist("1cfl!r3d")
-#names(gdp)[3] = "GDP"
-#names(life_expectancy)[3] = "Life Expectancy"
-#names(population)[3] = "Population"
-#development = join(gdp,life_expectancy)
-#development= join(development,population)
-#development_final = development[development$Year <= 2008,]
-#development_final$Country <-as.character(development_final$Country)
-#selection <- c("Afghanistan","Australia","Austria","Belgium","Bolivia","Brazil","Cambodia","Azerbaijan", "Chile","China","Denmark","Estonia","Ethiopia","Finland","France" ,"Georgia","Germany","Ghana","Greece","India","Indonesia","Iraq","Italy","Japan","Lithuania","Luxembourg","Mexico","New Zealand", "Niger", "Norway", "Poland", "Portugal","Rwanda", "Somalia", "South Africa", "Spain", "Sweden", "Switzerland", "Turkey","Uganda", "Ukraine", "United Kingdom", "United States", "Vietnam")
+selection <- c("Afghanistan","Australia","Austria","Belgium","Bolivia","Brazil","Cambodia","Azerbaijan", "Chile","China","Denmark","Estonia","Ethiopia","Finlan"""France","Georgia","Germany","Ghana","Greece","India","Indonesia","Iraq","Italy", "Japan","Lithuania","Luxembourg","Mexico","New Zealand", "Niger", "Norway", "Poland", "Portugal","Rwanda", "Somalia", "South Africa", "Spain", "Sweden", "Switzerland", "Turkey", "Uganda", "Ukraine", "United Kingdom", "United States", "Vietnam")
 ```
 
 
@@ -327,13 +269,6 @@ plot(my_motion_graph)
 
 *** =sct
 ```{r}
-#gvisMotionChart_args = c("data","idvar","timevar")
-#student_gvisMotionChart_args =try(names(get_arguments("gvisMotionChart")[[1]]))
-#standard_feedback_message = "Looks like you forgot to set in `gvisMotionChart()` the arguments"
-#gvisMotionChart_values = c("development_motion","Country","Year")
-#student_gvisMotionChart_values = try(get_arguments("gvisMotionChart")[[1]]) 
-#standard_feedback_message2 = "Looks like you set the wrong argument values in `gvisMotionChart()`:"
-
 # Instruction 1
 test_object("development_motion",
             undefined_msg = "Make sure you have taken a subset from `development_final` including only the countries in `selection`.",
@@ -352,29 +287,6 @@ test_output_contains("plot(my_motion_graph)",
 
 test_error()
 success_msg("Bellissimo! Take some time to enjoy the fruits of your labor and play around with the motion #chart! In the next exercise you will place the icing on the cake.")
-
-
-#test_object 
-#if (! exists("development_motion")) {
-#  DM.result = list(FALSE,"Make sure you have taken a subset from `development_final` including only the countries in #`selection`.")  
-#} else if (! identical(development_motion, subset(development_final, Country %in% selection) ) ){
-#  DM.result = list(FALSE, "Take a subset from `development_final` with the help of the `subset()` function. ")
-#} else if(! "gvisMotionChart" %in% called_functions()) {
-#  DM.result = list(FALSE,"You should use the `gvisMotionChart()` function in this exercise.")
-#} else if (!try(all(gvisMotionChart_args %in% student_gvisMotionChart_args))) { 
-#  missing_arguments =  gvisMotionChart_args[!(gvisMotionChart_args %in% student_gvisMotionChart_args)]
-#  DM.result = list(FALSE,paste(c(standard_feedback_message,missing_arguments),collapse=" "))
-#} else if (!try(all(gvisMotionChart_values %in% student_gvisMotionChart_values))) { 
-#  missing_values = student_gvisMotionChart_values[! (student_gvisMotionChart_values %in% gvisMotionChart_values)]
-#  DM.result = list(FALSE,paste(c(standard_feedback_message2,missing_values),collapse=" "))
-#} else if (! exists("my_motion_graph")) {
-#  DM.result = list(FALSE,"Mmmm. There is something with your `gvisMotionChart()` function. Check the hint if you need #help.") 
-#} else if (! isTRUE(try(function_has_arguments("plot",c("x"),c("my_motion_graph")))>=1)) {
-#  DM.result = list(FALSE,"Do not forget to plot your motion graph!")
-#} else {
-#  DM.result = list(TRUE,"Bellissimo! Take some time to enjoy the fruits of your labor and play around with the motion #chart! In the next exercise you will place the icing on the cake.")
-#} 
-#rm(gvisMotionChart_args,student_gvisMotionChart_args,gvisMotionChart_values,student_gvisMotionChart_values,standard_feedbac#k_message,standard_feedback_message2) 
 ```
 
 --- type:NormalExercise lang:r xp:100 skills:1,4
@@ -409,17 +321,7 @@ library("plyr")
 library("googleVis")
 options(gvis.plot.tag = 'chart')
 load(url("http://s3.amazonaws.com/assets.datacamp.com/course/googlevis/googlevis_ex4.RData"))
-#life_expectancy = dmlist("15r2!hrp")
-#gdp = dmlist("15c9!hd1")
-#population = dmlist("1cfl!r3d")
-#names(gdp)[3] = "GDP"
-#names(life_expectancy)[3] = "Life Expectancy"
-#names(population)[3] = "Population"
-#development = join(gdp,life_expectancy)
-#development= join(development,population)
-#development_final = development[development$Year <= 2008,]
-#development_final$Country <-as.character(development_final$Country)
-#selection <- c("Afghanistan","Australia","Austria","Belgium","Bolivia","Brazil","Cambodia","Azerbaijan", "Chile","China","Denmark","Estonia","Ethiopia","Finlan"""France","Georgia","Germany","Ghana","Greece","India","Indonesia","Iraq","Italy", "Japan","Lithuania","Luxembourg","Mexico","New Zealand", "Niger", "Norway", "Poland", "Portugal","Rwanda", "Somalia", "South Africa", "Spain", "Sweden", "Switzerland", "Turkey", "Uganda", "Ukraine", "United Kingdom", "United States", "Vietnam")
+selection <- c("Afghanistan","Australia","Austria","Belgium","Bolivia","Brazil","Cambodia","Azerbaijan", "Chile","China","Denmark","Estonia","Ethiopia","Finlan"""France","Georgia","Germany","Ghana","Greece","India","Indonesia","Iraq","Italy", "Japan","Lithuania","Luxembourg","Mexico","New Zealand", "Niger", "Norway", "Poland", "Portugal","Rwanda", "Somalia", "South Africa", "Spain", "Sweden", "Switzerland", "Turkey", "Uganda", "Ukraine", "United Kingdom", "United States", "Vietnam")
 ```
 
 
@@ -465,13 +367,6 @@ plot(my_motion_graph)
 
 *** =sct
 ```{r}
-#gvisMotionChart_args = c("data","idvar","timevar", "xvar","yvar","colorvar","sizevar")
-#student_gvisMotionChart_args =try(names(get_arguments("gvisMotionChart")[[1]]))
-#standard_feedback_message = "Looks like you forgot to set in `gvisMotionChart()` the arguments"
-#gvisMotionChart_values = c("Country","Year", "GDP", "Life Expectancy", "Country", "Population")
-#student_gvisMotionChart_values = try(get_arguments("gvisMotionChart")[[1]]) 
-#standard_feedback_message2 = "Looks like you set the wrong argument values in `gvisMotionChart()`:"
-
 # Instruction 1 from previous exercise
 test_object("development_motion",
             undefined_msg = "Make sure you have taken a subset from `development_final` including only the countries in `selection`.",
@@ -490,32 +385,6 @@ test_output_contains("plot(my_motion_graph)",
 
 test_error()
 success_msg("Isnt't that beautiful! Probably the best stats you've ever seen. Again, play around with the #graph and get a good understanding of what it represents. Then head to the final question...")
-
-
-
-#if (! exists("development_motion")) {
-#  DM.result = list(FALSE,"Make sure you have taken a subset from `development_final` including only the countries in #`selection`.")  
-#} else if (! identical(development_motion, subset(development_final, Country %in% selection) ) ){
-#  DM.result = list(FALSE, "You still need to work with a subset from `development_final`. Use the `subset()` function and #the `selection` variable. ")
-
-#} else if(! "gvisMotionChart" %in% called_functions()) {
-#  DM.result = list(FALSE,"You should use the `gvisMotionChart()` function in this exercise.")
-#} else if (! exists("my_motion_graph")) {
-#  DM.result = list(FALSE,"Mmmm. There is something fishy with your `gvisMotionChart()` function. It doesn't return a #result. Check the hint if you need help.") 
-  
- 
-#} else if (!try(all(gvisMotionChart_args %in% student_gvisMotionChart_args))) { 
-#  missing_arguments =  gvisMotionChart_args[!(gvisMotionChart_args %in% student_gvisMotionChart_args)]
-#  DM.result = list(FALSE,paste(c(standard_feedback_message,missing_arguments),collapse=" "))
-#} else if (!try(all(gvisMotionChart_values %in% student_gvisMotionChart_values))) { 
-#  missing_values = student_gvisMotionChart_values[! (student_gvisMotionChart_values %in% gvisMotionChart_values)]
-#  DM.result = list(FALSE,paste(c(standard_feedback_message2,missing_values),collapse=" "))
-#} else if (! isTRUE(try(function_has_arguments("plot",c("x"),c("my_motion_graph")))>=1)) {
-#  DM.result = list(FALSE,"Do not forget to plot your new motion graph!")
-#} else {
-#  DM.result = list(TRUE,"Isnt't that beautiful! Probably the best stats you've ever seen. Again, play around with the #graph and get a good understanding of what it represents. Then head to the final question...")
-#} 
-#rm(gvisMotionChart_args,student_gvisMotionChart_args,gvisMotionChart_values,student_gvisMotionChart_values,standard_feedb#ack_message,standard_feedback_message2) 
 ```
 
 
@@ -544,18 +413,18 @@ library("plyr")
 library("googleVis")
 options(gvis.plot.tag = 'chart')
 load(url("http://s3.amazonaws.com/assets.datacamp.com/course/googlevis/googlevis_ex5.RData"))
-#life_expectancy = dmlist("15r2!hrp")
-#gdp = dmlist("15c9!hd1")
-#population = dmlist("1cfl!r3d")
-#names(gdp)[3] = "GDP"
-#names(life_expectancy)[3] = "Life Expectancy"
-#names(population)[3] = "Population"
-#development = join(gdp,life_expectancy)
-#development= join(development,population)
-#development_final = development[development$Year <= 2008,]
-#development_final$Country <-as.character(development_final$Country)
-#selection <- c("Afghanistan","Australia","Austria","Belgium","Bolivia","Brazil","Cambodia","Azerbaijan", "Chile","China","Denmark","Estonia","Ethiopia","Finland","France","Georgia","Germany","Ghana","Greece","India","Indonesia","Iraq","Italy","Japan","Lithuania","Luxembourg","Mexico","New Zealand", "Niger", "Norway", "Poland", "Portugal","Rwanda", "Somalia", "South Africa", "Spain", "Sweden", "Switzerland", "Turkey","Uganda", "Ukraine", "United Kingdom", "United States", "Vietnam")
-#development_motion = subset(development_final, Country %in% selection)
+life_expectancy = dmlist("15r2!hrp")
+gdp = dmlist("15c9!hd1")
+population = dmlist("1cfl!r3d")
+names(gdp)[3] = "GDP"
+names(life_expectancy)[3] = "Life Expectancy"
+names(population)[3] = "Population"
+development = join(gdp,life_expectancy)
+development= join(development,population)
+development_final = development[development$Year <= 2008,]
+development_final$Country <-as.character(development_final$Country)
+selection <- c("Afghanistan","Australia","Austria","Belgium","Bolivia","Brazil","Cambodia","Azerbaijan", "Chile","China","Denmark","Estonia","Ethiopia","Finland","France","Georgia","Germany","Ghana","Greece","India","Indonesia","Iraq","Italy","Japan","Lithuania","Luxembourg","Mexico","New Zealand", "Niger", "Norway", "Poland", "Portugal","Rwanda", "Somalia", "South Africa", "Spain", "Sweden", "Switzerland", "Turkey","Uganda", "Ukraine", "United Kingdom", "United States", "Vietnam")
+development_motion = subset(development_final, Country %in% selection)
 my_motion_graph = gvisMotionChart(development_motion,idvar = "Country",timevar = "Year",xvar = "GDP",yvar = "Life Expectancy",colorvar = "Country",sizevar = "Population")
 ```
 
