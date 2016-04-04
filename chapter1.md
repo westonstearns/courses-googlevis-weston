@@ -334,16 +334,16 @@ plot(my_motion_graph)
 #student_gvisMotionChart_values = try(get_arguments("gvisMotionChart")[[1]]) 
 #standard_feedback_message2 = "Looks like you set the wrong argument values in `gvisMotionChart()`:"
 
-test_error()
+#test_error()
 # Instruction 1
 test_object("development_motion",
             undefined_msg = "Make sure you have taken a subset from `development_final` including only the countries in `selection`.",
             incorrect_msg = "You still need to work with a subset from `development_final`. Use the `subset()` function and the `selection` variable. ")
 
 # Instructions 2 and 3
-test_function("gvisMotionChart", c("data", "idvar", "timevar") , eval = FALSE, 
+test_function("gvisMotionChart", c("data", "idvar", "timevar"), eval = FALSE, 
               not_called_msg = "You should use the `gvisMotionChart()` function in this exercise.",
-              incorrect_msg = "Mmmm. There is something fishy with your `gvisMotionChart()` function. It doesn't return a result. Check the hint if you need help.")
+              incorrect_msg = "Mmmm. There is something fishy with your `gvisMotionChart()` function. It doesn't return a                 result. Check the hint if you need help.")
 
 # Instruction 4
 test_function("plot", "my_motion_graph",
