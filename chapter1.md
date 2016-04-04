@@ -328,7 +328,7 @@ gvisMotionChart_values = c("development_motion","Country","Year")
 student_gvisMotionChart_values = try(get_arguments("gvisMotionChart")[[1]]) 
 standard_feedback_message2 = "Looks like you set the wrong argument values in `gvisMotionChart()`:"
 
-test_object 
+#test_object 
 if (! exists("development_motion")) {
   DM.result = list(FALSE,"Make sure you have taken a subset from `development_final` including only the countries in `selection`.")  
 } else if (! identical(development_motion, subset(development_final, Country %in% selection) ) ){
@@ -450,11 +450,11 @@ test_object("development_motion",
             undefined_msg = "Make sure you have taken a subset from `development_final` including only the countries in `selection`.",
             incorrect_msg = "You still need to work with a subset from `development_final`. Use the `subset()` function and the `selection` variable. ")
 
-test_function("gvisMotionChart", eval = FALSE, 
+test_function("gvisMotionChart", "data", eval = FALSE, 
               not_called_msg = "You should use the `gvisMotionChart()` function in this exercise.",
               incorrect_msg = "Mmmm. There is something fishy with your `gvisMotionChart()` function. It doesn't return a result. Check the hint if you need help.")
-test_props(index = 1, funs = c("gvisMotionChart"), props = c("data"))
-test_props(index = 1, funs = c("gvisMotionChart"), props = c("idvar", "timevar"))
+#test_props(index = 1, funs = c("gvisMotionChart"), props = c("data"))
+#test_props(index = 1, funs = c("gvisMotionChart"), props = c("idvar", "timevar"))
 
 #if (! exists("development_motion")) {
 #  DM.result = list(FALSE,"Make sure you have taken a subset from `development_final` including only the countries in #`selection`.")  
