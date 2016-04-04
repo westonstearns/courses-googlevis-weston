@@ -94,9 +94,9 @@ test_object("life_expectancy",
             undefined_msg = "Did you assign to `life_expectancy` to the evolution of a country's life expectancy over the past years?",
             incorrect_msg = "Did you change the way to calculate the variable `life_expectancy`?")
 test_or(
-            test_output_contains("head(life_expectancy)"), 
-            test_output_contains("tail(life_expectancy)"),
-                     incorrect_msg = "Did you print the start and/or the end of the life expectancies data frame to the console?")
+        test_output_contains("head(life_expectancy)"), 
+        test_output_contains("tail(life_expectancy)"),
+                             incorrect_msg = "Did you print the start and/or the end of the life expectancies data frame to the console?")
    
 # Instruction 3
 test_object("gdp",
@@ -105,9 +105,9 @@ test_object("gdp",
 
 # Instruction 4
 test_or(
-            test_output_contains("head(population)"), 
-            test_output_contains("tail(population)"),
-                     incorrect_msg = "Did you print the start and/or the end of the population data frame to the console?")
+        test_output_contains("head(population)"), 
+        test_output_contains("tail(population)"),
+                             incorrect_msg = "Did you print the start and/or the end of the population data frame to the console?")
 
 success_msg("Good job! Now that you've imported the data, continue to the next exercise to start the real work.")
 
