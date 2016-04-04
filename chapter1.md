@@ -107,7 +107,7 @@ test_or(
 #                     incorrect_msg = "Did you print the start and/or the end of the populations data frame to the #console?")
 #test_output_contains("tail(population)", 
 #                     incorrect_msg = "Did you print the start and/or the end of the population data frame to the console?")
-#success_msg("Good job! Now that you've imported the data, continue to the next exercise to start the real work.")
+success_msg("Good job! Now that you've imported the data, continue to the next exercise to start the real work.")
 
 #if (!exists("life_expectancy")) {
 #  DM.result = list(FALSE,"Did you assign to `life_expectancy` the evolution of a country's life expectancy over the past #years?")
@@ -321,34 +321,52 @@ plot(my_motion_graph)
 
 *** =sct
 ```{r}
-gvisMotionChart_args = c("data","idvar","timevar")
-student_gvisMotionChart_args =try(names(get_arguments("gvisMotionChart")[[1]]))
-standard_feedback_message = "Looks like you forgot to set in `gvisMotionChart()` the arguments"
-gvisMotionChart_values = c("development_motion","Country","Year")
-student_gvisMotionChart_values = try(get_arguments("gvisMotionChart")[[1]]) 
-standard_feedback_message2 = "Looks like you set the wrong argument values in `gvisMotionChart()`:"
+#gvisMotionChart_args = c("data","idvar","timevar")
+#student_gvisMotionChart_args =try(names(get_arguments("gvisMotionChart")[[1]]))
+#standard_feedback_message = "Looks like you forgot to set in `gvisMotionChart()` the arguments"
+#gvisMotionChart_values = c("development_motion","Country","Year")
+#student_gvisMotionChart_values = try(get_arguments("gvisMotionChart")[[1]]) 
+#standard_feedback_message2 = "Looks like you set the wrong argument values in `gvisMotionChart()`:"
+
+# Instruction 1
+test_object("development_motion",
+            undefined_msg = "Make sure you have taken a subset from `development_final` including only the countries in `selection`.",
+            incorrect_msg = "You still need to work with a subset from `development_final`. Use the `subset()` function and the `selection` variable. ")
+
+# Instructions 2 and 3
+test_function("gvisMotionChart", c("data", "idvar") , eval = FALSE, 
+              not_called_msg = "You should use the `gvisMotionChart()` function in this exercise.",
+              incorrect_msg = "Mmmm. There is something fishy with your `gvisMotionChart()` function. It doesn't return a result. Check the hint if you need help.")
+
+# Instruction 4
+test_function("plot", "my_motion_graph",
+              not_called_msg = "Do not forget to plot your new motion graph!",
+              incorrect_msg = "Make sure to use `plot()` to display `my_motion_graph`!")
+
+success_msg("Bellissimo! Take some time to enjoy the fruits of your labor and play around with the motion #chart! In the next exercise you will place the icing on the cake.")
+
 
 #test_object 
-if (! exists("development_motion")) {
-  DM.result = list(FALSE,"Make sure you have taken a subset from `development_final` including only the countries in `selection`.")  
-} else if (! identical(development_motion, subset(development_final, Country %in% selection) ) ){
-  DM.result = list(FALSE, "Take a subset from `development_final` with the help of the `subset()` function. ")
-} else if(! "gvisMotionChart" %in% called_functions()) {
-  DM.result = list(FALSE,"You should use the `gvisMotionChart()` function in this exercise.")
-} else if (!try(all(gvisMotionChart_args %in% student_gvisMotionChart_args))) { 
-  missing_arguments =  gvisMotionChart_args[!(gvisMotionChart_args %in% student_gvisMotionChart_args)]
-  DM.result = list(FALSE,paste(c(standard_feedback_message,missing_arguments),collapse=" "))
-} else if (!try(all(gvisMotionChart_values %in% student_gvisMotionChart_values))) { 
-  missing_values = student_gvisMotionChart_values[! (student_gvisMotionChart_values %in% gvisMotionChart_values)]
-  DM.result = list(FALSE,paste(c(standard_feedback_message2,missing_values),collapse=" "))
-} else if (! exists("my_motion_graph")) {
-  DM.result = list(FALSE,"Mmmm. There is something with your `gvisMotionChart()` function. Check the hint if you need help.") 
-} else if (! isTRUE(try(function_has_arguments("plot",c("x"),c("my_motion_graph")))>=1)) {
-  DM.result = list(FALSE,"Do not forget to plot your motion graph!")
-} else {
-  DM.result = list(TRUE,"Bellissimo! Take some time to enjoy the fruits of your labor and play around with the motion chart! In the next exercise you will place the icing on the cake.")
-} 
-rm(gvisMotionChart_args,student_gvisMotionChart_args,gvisMotionChart_values,student_gvisMotionChart_values,standard_feedback_message,standard_feedback_message2) 
+#if (! exists("development_motion")) {
+#  DM.result = list(FALSE,"Make sure you have taken a subset from `development_final` including only the countries in #`selection`.")  
+#} else if (! identical(development_motion, subset(development_final, Country %in% selection) ) ){
+#  DM.result = list(FALSE, "Take a subset from `development_final` with the help of the `subset()` function. ")
+#} else if(! "gvisMotionChart" %in% called_functions()) {
+#  DM.result = list(FALSE,"You should use the `gvisMotionChart()` function in this exercise.")
+#} else if (!try(all(gvisMotionChart_args %in% student_gvisMotionChart_args))) { 
+#  missing_arguments =  gvisMotionChart_args[!(gvisMotionChart_args %in% student_gvisMotionChart_args)]
+#  DM.result = list(FALSE,paste(c(standard_feedback_message,missing_arguments),collapse=" "))
+#} else if (!try(all(gvisMotionChart_values %in% student_gvisMotionChart_values))) { 
+#  missing_values = student_gvisMotionChart_values[! (student_gvisMotionChart_values %in% gvisMotionChart_values)]
+#  DM.result = list(FALSE,paste(c(standard_feedback_message2,missing_values),collapse=" "))
+#} else if (! exists("my_motion_graph")) {
+#  DM.result = list(FALSE,"Mmmm. There is something with your `gvisMotionChart()` function. Check the hint if you need #help.") 
+#} else if (! isTRUE(try(function_has_arguments("plot",c("x"),c("my_motion_graph")))>=1)) {
+#  DM.result = list(FALSE,"Do not forget to plot your motion graph!")
+#} else {
+#  DM.result = list(TRUE,"Bellissimo! Take some time to enjoy the fruits of your labor and play around with the motion #chart! In the next exercise you will place the icing on the cake.")
+#} 
+#rm(gvisMotionChart_args,student_gvisMotionChart_args,gvisMotionChart_values,student_gvisMotionChart_values,standard_feedbac#k_message,standard_feedback_message2) 
 ```
 
 --- type:NormalExercise lang:r xp:100 skills:1,4
@@ -368,7 +386,7 @@ Time to set this into action...
 
 *** =instructions
 - The code you wrote for `my_motion_graph` in the previous exercise is provided. Add the required additional arguments. 
-- Make sure the x-as of your motion chart represents the GDP of a country, and the y-as the life expectancy.  
+- Make sure the x-axis of your motion chart represents the GDP of a country, and the y-axis is life expectancy.  
 - The bubble color should depend on the country it represents.
 - The bubble size should increase if a country has a larger number of citizens.  
 - Do not forget to plot your new motion chart.
@@ -439,22 +457,31 @@ plot(my_motion_graph)
 
 *** =sct
 ```{r}
-gvisMotionChart_args = c("data","idvar","timevar", "xvar","yvar","colorvar","sizevar")
-student_gvisMotionChart_args =try(names(get_arguments("gvisMotionChart")[[1]]))
-standard_feedback_message = "Looks like you forgot to set in `gvisMotionChart()` the arguments"
-gvisMotionChart_values = c("Country","Year", "GDP", "Life Expectancy", "Country", "Population")
-student_gvisMotionChart_values = try(get_arguments("gvisMotionChart")[[1]]) 
-standard_feedback_message2 = "Looks like you set the wrong argument values in `gvisMotionChart()`:"
+#gvisMotionChart_args = c("data","idvar","timevar", "xvar","yvar","colorvar","sizevar")
+#student_gvisMotionChart_args =try(names(get_arguments("gvisMotionChart")[[1]]))
+#standard_feedback_message = "Looks like you forgot to set in `gvisMotionChart()` the arguments"
+#gvisMotionChart_values = c("Country","Year", "GDP", "Life Expectancy", "Country", "Population")
+#student_gvisMotionChart_values = try(get_arguments("gvisMotionChart")[[1]]) 
+#standard_feedback_message2 = "Looks like you set the wrong argument values in `gvisMotionChart()`:"
 
+# Instruction 1 from previous exercise
 test_object("development_motion",
             undefined_msg = "Make sure you have taken a subset from `development_final` including only the countries in `selection`.",
             incorrect_msg = "You still need to work with a subset from `development_final`. Use the `subset()` function and the `selection` variable. ")
 
+# Instructions 2 and 3
 test_function("gvisMotionChart", c("data", "idvar", "timevar", "xvar", "yvar", "colorvar", "sizevar") , eval = FALSE, 
               not_called_msg = "You should use the `gvisMotionChart()` function in this exercise.",
               incorrect_msg = "Mmmm. There is something fishy with your `gvisMotionChart()` function. It doesn't return a result. Check the hint if you need help.")
-#test_props(index = 1, funs = c("gvisMotionChart"), props = c("data"))
-#test_props(index = 1, funs = c("gvisMotionChart"), props = c("idvar", "timevar"))
+
+# Instruction 4
+test_function("plot", "my_motion_graph",
+              not_called_msg = "Do not forget to plot your new motion graph!",
+              incorrect_msg = "Make sure to use `plot()` to display `my_motion_graph`!")
+
+success_msg("Isnt't that beautiful! Probably the best stats you've ever seen. Again, play around with the #graph and get a good understanding of what it represents. Then head to the final question...")
+
+
 
 #if (! exists("development_motion")) {
 #  DM.result = list(FALSE,"Make sure you have taken a subset from `development_final` including only the countries in #`selection`.")  
@@ -466,6 +493,7 @@ test_function("gvisMotionChart", c("data", "idvar", "timevar", "xvar", "yvar", "
 #} else if (! exists("my_motion_graph")) {
 #  DM.result = list(FALSE,"Mmmm. There is something fishy with your `gvisMotionChart()` function. It doesn't return a #result. Check the hint if you need help.") 
   
+ 
 #} else if (!try(all(gvisMotionChart_args %in% student_gvisMotionChart_args))) { 
 #  missing_arguments =  gvisMotionChart_args[!(gvisMotionChart_args %in% student_gvisMotionChart_args)]
 #  DM.result = list(FALSE,paste(c(standard_feedback_message,missing_arguments),collapse=" "))
