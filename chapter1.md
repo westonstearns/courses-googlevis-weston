@@ -346,7 +346,7 @@ test_function("gvisMotionChart", c("data", "idvar", "timevar"), eval = FALSE,
               incorrect_msg = "Mmmm. There is something fishy with your `gvisMotionChart()` function. It doesn't return a result. Check the hint if you need help.")
 
 # Instruction 4
-test_function("plot", "my_motion_graph",
+test_function("plot",
               not_called_msg = "Do not forget to plot your new motion graph!",
               incorrect_msg = "Make sure to use `plot()` to display `my_motion_graph`!")
 
