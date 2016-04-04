@@ -214,7 +214,7 @@ test_object("gdp",
 test_object("life_expectancy",
             undefined_msg = "Have a look at how the column values of `gdp` were renamed. Do the same for `life_expectancy`.",
             incorrect_msg = "Have a look at how the column values of `gdp` were renamed. Do the same for `life_expectancy`.")
-test_object("population",
+test_data_frame("population",
             undefined_msg = "Have a look at how the column values of `gdp` were renamed. Do the same for `population`.",
             incorrect_msg = "Have a look at how the column values of `gdp` were renamed. Do the same for `population`.")
 
