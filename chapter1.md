@@ -343,7 +343,7 @@ test_object("development_motion",
 # Instructions 2 and 3
 test_function("gvisMotionChart", c("data", "idvar", "timevar"), eval = FALSE, 
               not_called_msg = "You should use the `gvisMotionChart()` function in this exercise.",
-              incorrect_msg = "Mmmm. There is something fishy with your `gvisMotionChart()` function. It doesn't return a                 result. Check the hint if you need help.")
+              incorrect_msg = "Mmmm. There is something fishy with your `gvisMotionChart()` function. It doesn't return a result. Check the hint if you need help.")
 
 # Instruction 4
 test_function("plot", "my_motion_graph",
