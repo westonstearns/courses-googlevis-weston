@@ -450,7 +450,7 @@ test_object("development_motion",
             undefined_msg = "Make sure you have taken a subset from `development_final` including only the countries in `selection`.",
             incorrect_msg = "You still need to work with a subset from `development_final`. Use the `subset()` function and the `selection` variable. ")
 
-test_function("gvisMotionChart", "data", eval = FALSE, 
+test_function("gvisMotionChart", c("data", "idvar", "timevar", "xvar", "yvar", "colorvar", "sizevar") , eval = FALSE, 
               not_called_msg = "You should use the `gvisMotionChart()` function in this exercise.",
               incorrect_msg = "Mmmm. There is something fishy with your `gvisMotionChart()` function. It doesn't return a result. Check the hint if you need help.")
 #test_props(index = 1, funs = c("gvisMotionChart"), props = c("data"))
