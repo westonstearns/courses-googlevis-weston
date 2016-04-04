@@ -334,7 +334,6 @@ plot(my_motion_graph)
 #student_gvisMotionChart_values = try(get_arguments("gvisMotionChart")[[1]]) 
 #standard_feedback_message2 = "Looks like you set the wrong argument values in `gvisMotionChart()`:"
 
-test_error()
 # Instruction 1
 test_object("development_motion",
             undefined_msg = "Make sure you have taken a subset from `development_final` including only the countries in `selection`.",
@@ -350,6 +349,7 @@ test_function("plot",
               not_called_msg = "Do not forget to plot your new motion graph!",
               incorrect_msg = "Make sure to use `plot()` to display `my_motion_graph`!")
 
+test_error()
 success_msg("Bellissimo! Take some time to enjoy the fruits of your labor and play around with the motion #chart! In the next exercise you will place the icing on the cake.")
 
 
