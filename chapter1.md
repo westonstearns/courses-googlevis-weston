@@ -201,7 +201,7 @@ test_function("join", 2,
 
 # Instruction 3
 test_output_contains("head(development_final)", 
-                     incorrect_msg = "Don't forget to inspect the first rows of `development_final`")
+                     incorrect_msg = "Don't forget to inspect the first few rows of `development_final`")
 
 success_msg("Looks like your data is ready to rumble! Time to make Hans Rosling proud.")
 ```
