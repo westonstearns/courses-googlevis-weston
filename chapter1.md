@@ -196,9 +196,9 @@ test_data_frame("population",
 # Instruction 2
 test_function("join", 
             incorrect_msg = "Looks like you did not use the join() formula to merge your data frames.")
-test_object("development[development$Country == "World",]",
-            undefined_msg = "Seems like you made a mistake when merging the data frames. Have a look at the hint if you need any help.",
-            incorrect_msg = "Seems like you made a mistake when merging the data frames. Have a look at the hint if you need any help.")
+#test_object("development",
+#            undefined_msg = "Seems like you made a mistake when merging the data frames. Have a look at the hint if you #need any help.",
+#            incorrect_msg = "Seems like you made a mistake when merging the data frames. Have a look at the hint if you #need any help.")
 
 # Instruction 3
 test_object("development_final",
