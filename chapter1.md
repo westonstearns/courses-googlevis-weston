@@ -283,7 +283,7 @@ test_function("plot",
 #                     incorrect_msg = "Make sure to use `plot()` to display `my_motion_graph`!")
 
 test_error()
-success_msg("Bellissimo! Take some time to enjoy the fruits of your labor and play around with the motion #chart! In the next exercise you will place the icing on the cake.")
+success_msg("Bellissimo! Take some time to enjoy the fruits of your labor and play around with the motion chart! In the next exercise you will place the icing on the cake.")
 ```
 
 --- type:NormalExercise lang:r xp:100 skills:1,4
