@@ -126,7 +126,7 @@ However, in this exercise you will be required to do it with the [`join()`](http
 *** =instructions
 - The code to rename the column name "Value" to "GDP" for the `gdp` dataset is provided. Now rename the column name "Value" in the other two datasets to respectively "Population" and "Life Expectancy".
 - Use `plyr()` and its `join()` function to merge our three data frames into one data frame `development`. In this case, you want to join on all common variables: "Country" and "Year". Joining on all common variables means the `by` argument is not required.   
-- Take a subset from the `development` dataset that does not include the values after 2008. Name this new dataset `development_final`
+- Take a subset from the `development` dataset that does not include the values after 2008. Name this new dataset `development_final`. Then output the final few rows of the data frame with `tail()`.
 
 *** =hint
 Joining our three data frames into one is very easy in this case. If you have 3 datasets to join, `data_one`, `data_two` and `data_three`, on all common variables, you go in steps: `data_total = join(data_one,data_two)` and then `data_total = join(data_total,data_three)`. So every `join()` only needs two arguments here.    
@@ -155,7 +155,7 @@ names(gdp)[3] <- "GDP"
 development <- join(gdp, ___)
 development <- join(___, ___)
 
-#Make sure no data beyond 2008 is included
+#Make sure no data beyond 2008 is included and inspect the tail of the data frame
 development_final = 
 ```
 
@@ -173,7 +173,7 @@ names(population)[3] <- "Population"
 development <- join(gdp,life_expectancy)
 development <- join(development,population)
 
-#Make sure no data beyond 2008 is included
+#Make sure no data beyond 2008 is included and inspect the tail of the data frame
 development_final <- development[development$Year <= 2008,]
 tail(development_final)
 ```
