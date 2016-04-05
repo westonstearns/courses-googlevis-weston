@@ -200,7 +200,7 @@ test_function("join",
 
 # Instruction 3
 test_output_contains("tail(development_final)", 
-                     incorrect_msg = "Don't forget to inspect the first few rows of `development_final`")
+                     incorrect_msg = "Don't forget to inspect the last few rows of `development_final`. The output should not contain any observations after 2008 and 5 newly renamed columns.")
 
 success_msg("Looks like your data is ready to rumble! Time to make Hans Rosling proud.")
 ```
