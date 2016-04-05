@@ -194,10 +194,8 @@ test_data_frame("population",
             undefined_cols_msg = "Have a look at how the column values of `gdp` were renamed. Do the same for `population`.")
 
 # Instruction 2
-test_function("join", 1,
+test_function("join",
             incorrect_msg = "Looks like you did not use the join() formula to correctly to merge your data frames.")
-test_function("join", 2,
-            incorrect_msg = "Looks like you did not use the join() formula correctly to merge your data frames.")
 
 # Instruction 3
 test_output_contains("head(development_final)", 
