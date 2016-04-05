@@ -194,13 +194,14 @@ test_data_frame("population",
             undefined_cols_msg = "Have a look at how the column values of `gdp` were renamed. Do the same for `population`.")
 
 # Instruction 2
-test_function("join", 
-            incorrect_msg = "Looks like you did not use the join() formula to merge your data frames.")
+test_function("join", 1,
+            incorrect_msg = "Looks like you did not use the join() formula to correctly to merge your data frames.")
+test_function("join", 2,
+            incorrect_msg = "Looks like you did not use the join() formula correctly to merge your data frames.")
 
 # Instruction 3
-test_object("development_final",
-            undefined_msg = "Did you assign 'development_final'",
-            incorrect_msg = "Do not forget to take a subset from `development`, excluding all data beyond 2008. Type `?subset` in the console for more help.")
+test_output_contains("head(development_final)", 
+                     incorrect_msg = "Don't forget to inspect the first rows of `development_final`")
 
 success_msg("Looks like your data is ready to rumble! Time to make Hans Rosling proud.")
 ```
