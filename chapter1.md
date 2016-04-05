@@ -196,7 +196,7 @@ test_data_frame("population",
 # Instruction 2
 test_function("join", 
             incorrect_msg = "Looks like you did not use the join() formula to merge your data frames.")
-test_object("development", 2,
+test_object("development", eq_condition = "like",
             undefined_msg = "Seems like you made a mistake when merging the data frames. Have a look at the hint if you need any help.",
             incorrect_msg = "Seems like you made a mistake when merging the data frames. Have a look at the hint if you need any help.")
 
