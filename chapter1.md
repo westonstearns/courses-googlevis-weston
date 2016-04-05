@@ -175,6 +175,7 @@ development <- join(development,population)
 
 #Make sure no data beyond 2008 is included
 development_final <- development[development$Year <= 2008,]
+tail(development_final)
 ```
 
 
@@ -198,7 +199,7 @@ test_function("join",
             incorrect_msg = "Looks like you did not use the join() formula to correctly to merge your data frames.")
 
 # Instruction 3
-test_output_contains("head(development_final)", 
+test_output_contains("tail(development_final)", 
                      incorrect_msg = "Don't forget to inspect the first few rows of `development_final`")
 
 success_msg("Looks like your data is ready to rumble! Time to make Hans Rosling proud.")
