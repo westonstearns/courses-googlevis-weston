@@ -401,7 +401,6 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/googlevis/googlevis
 selection <- c("Afghanistan","Australia","Austria","Belgium","Bolivia","Brazil","Cambodia","Azerbaijan", "Chile","China","Denmark","Estonia","Ethiopia","Finland","France","Georgia","Germany","Ghana","Greece","India","Indonesia","Iraq","Italy", "Japan","Lithuania","Luxembourg","Mexico","New Zealand", "Niger", "Norway", "Poland", "Portugal","Rwanda", "Somalia", "South Africa", "Spain", "Sweden", "Switzerland", "Turkey", "Uganda", "Ukraine", "United Kingdom", "United States", "Vietnam")
 ```
 
-
 *** =sample_code
 ```{r}
 # Include only the countries from `selection` in the interactive motion chart
@@ -510,5 +509,3 @@ msg <- "Have another look at your graph. Use the hint if you need extra help."
 okmsg <- "Wunderbar! We hope you enjoyed doing this demo on DataCamp. In the future we plan to do more courses on using interactive visualizations to analyze and present your data via R and googleVis. In the mean time, keep practicing, and maybe you can, sometime, share the stage with Hans Rosling."
 test_mc(2, c(msg, okmsg, msg, msg))
 ```
-
-
