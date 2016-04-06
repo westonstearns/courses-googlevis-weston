@@ -293,7 +293,7 @@ When working with a simple dataset to visualize, a single color and size for eac
 
 To make the motion chart even more understandable you can play with the size and color of each bubble. This way you can present more information into one motion chart. Doing this with googleVis is not that hard, again, you only have to play a little bit with the arguments. 
 
-Let's say you want to make a motion chart that displays the GDP of a country on the x-as and the life expectancy on the y-as. Furthermore, you think it would be nice if each country has a unique color, and the size of each bubble represents the size of the population of that country. Doing this via the `gvisMotionChart()` function, will require adding 3 additional arguments to our existing function:
+Let's say you want to make a motion chart that displays the GDP of a country on the x-as and the life expectancy on the y-axis. Furthermore, you think it would be nice if each country has a unique color, and the size of each bubble represents the size of the population of that country. Doing this via the `gvisMotionChart()` function, will require adding 3 additional arguments to our existing function:
 
 - xvar = Here you place the column name of the variable to be plotted on the x-axis
 - yvar = Here you place the column name of the variable to be plotted on the y-axis 
@@ -374,9 +374,94 @@ test_function("plot",
               not_called_msg = "Do not forget to plot your new motion graph!")
 
 test_error()
-success_msg("Isnt't that beautiful! Probably the best stats you've ever seen. Again, play around with the #graph and get a good understanding of what it represents. Then head to the final question...")
+success_msg("Isnt't that beautiful! Probably the best stats you've ever seen. Again, play around with the graph and get a good understanding of what it represents. Then head to the final question...")
 ```
 
+--- type:NormalExercise lang:r xp:100 skills:1,4
+##  googleVis - final output
+
+That last plot looked awesome! We should make one more adjustment to the plot to see if we can improve it. It looks like the relationship between our `GDP` and `Life Expectancy` is non-linear. Lets try to make a transformation of the data to makethe plot easier to read. 
+
+
+*** =instructions
+- Create a new column in `development_motion` that corresponds to the log of the GDP column called "logGDP".
+- The code you wrote for `my_motion_graph` in the previous exercise is provided. Change the x-axis argument to our newly created logGDP column. 
+- Do not forget to plot your new motion chart.
+
+*** =hint
+The four arguments you should add are xvar = "GDP", yvar = "Life Expectancy", colorvar = "Country",and sizevar = "Population".
+
+*** =pre_exercise_code
+```{r}
+library("rdatamarket")
+library("plyr")
+library("googleVis")
+options(gvis.plot.tag = 'chart')
+load(url("http://s3.amazonaws.com/assets.datacamp.com/course/googlevis/googlevis_ex4.RData"))
+selection <- c("Afghanistan","Australia","Austria","Belgium","Bolivia","Brazil","Cambodia","Azerbaijan", "Chile","China","Denmark","Estonia","Ethiopia","Finland","France","Georgia","Germany","Ghana","Greece","India","Indonesia","Iraq","Italy", "Japan","Lithuania","Luxembourg","Mexico","New Zealand", "Niger", "Norway", "Poland", "Portugal","Rwanda", "Somalia", "South Africa", "Spain", "Sweden", "Switzerland", "Turkey", "Uganda", "Ukraine", "United Kingdom", "United States", "Vietnam")
+```
+
+
+*** =sample_code
+```{r}
+# Include only the countries from `selection` in the interactive motion chart
+selection
+development_motion = subset(development_final, Country %in% selection)
+  
+# Create a new column that corresponds to the log of the GDP column
+
+
+# Create the interactive motion chart with R and `gvisMotionChart())`
+my_motion_graph = gvisMotionChart(development_motion,
+                    idvar = "Country",
+                    timevar = "Year",
+                    xvar = ___,
+                    yvar = "Life Expectancy",
+                    sizevar = "Population")
+
+# Plot your new motion graph with the help of `plot()`
+```
+
+*** =solution
+```{r}
+# Include only the countries from `selection` in the interactive motion chart
+selection
+development_motion = subset(development_final, Country %in% selection)
+  
+# Create a new column that corresponds to the log of the GDP column
+my_motion_graph$logGDP = log(my_motion_graph$GDP)
+
+# Create the interactive motion chart with R and `gvisMotionChart())`
+my_motion_graph = gvisMotionChart(development_motion,
+                    idvar = "Country",
+                    timevar = "Year",
+                    xvar = "logGDP",
+                    yvar = "Life Expectancy",
+                    sizevar = "Population")
+
+# Plot your new motion graph with the help of `plot()`
+plot(my_motion_graph)
+```
+
+*** =sct
+```{r}
+# Instruction 1 from previous exercise
+test_object("development_motion",
+            undefined_msg = "Make sure you have taken a subset from `development_final` including only the countries in `selection`.",
+            incorrect_msg = "You still need to work with a subset from `development_final`. Use the `subset()` function and the `selection` variable. ")
+
+# Instructions 2 and 3
+test_function("gvisMotionChart", c("data", "idvar", "timevar", "xvar", "yvar", "sizevar") , eval = FALSE, 
+              not_called_msg = "You should use the `gvisMotionChart()` function in this exercise.",
+              incorrect_msg = "Mmmm. There is something fishy with your `gvisMotionChart()` function. It doesn't return a result. Check the hint if you need help.")
+
+# Instruction 4
+test_function("plot",
+              not_called_msg = "Do not forget to plot your new motion graph!")
+
+test_error()
+success_msg("Isnt't that beautiful! Probably the best stats you've ever seen. Again, play around with the graph and get a good understanding of what it represents. Then head to the final question...")
+```
 
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1,4
 ##  googleVis - the recessional
@@ -403,6 +488,7 @@ library("plyr")
 library("googleVis")
 options(gvis.plot.tag = 'chart')
 load(url("http://s3.amazonaws.com/assets.datacamp.com/course/googlevis/googlevis_ex5.RData"))
+my_motion_graph$logGDP = log(my_motion_graph$GDP)
 life_expectancy = dmlist("15r2!hrp")
 gdp = dmlist("15c9!hd1")
 population = dmlist("1cfl!r3d")
