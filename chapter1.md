@@ -245,8 +245,9 @@ development_motion =
 my_motion_graph = gvisMotionChart(___,
                                   ___,
                                   ___,
-                                  options=list(height='automatic', width='automatic'))
-
+                                  options=list(height='automatic', 
+                                               width='automatic'))
+                                  
 # Plot you motion graph with the help of `plot()`
 
 ```
@@ -259,10 +260,10 @@ development_motion = subset(development_final, Country %in% selection)
   
 # Create the interactive motion chart with R and `gvisMotionChart`
 my_motion_graph = gvisMotionChart(development_motion,
-                idvar = "Country",
-                timevar = "Year",
-                options=list(height='automatic', width='automatic')
-)
+                                  idvar = "Country",
+                                  timevar = "Year",
+                                  options=list(height='automatic', 
+                                               width='automatic'))
 
 # Plot you motion graph with the help of `plot()`
 plot(my_motion_graph)
