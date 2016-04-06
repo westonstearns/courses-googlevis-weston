@@ -334,11 +334,13 @@ development_motion = subset(development_final, Country %in% selection)
   
 # Create the interactive motion chart with R and `gvisMotionChart())`
 my_motion_graph = gvisMotionChart(development_motion,
-                    idvar = "Country",
-                    timevar = "Year",
-                    xvar = ___,
-                    ___,
-                    ___)
+                                  idvar = "Country",
+                                  timevar = "Year",
+                                  xvar = ___,
+                                  ___,
+                                  ___,
+                                  options=list(height='automatic', 
+                                               width='automatic'))
 
 # Plot your new motion graph with the help of `plot()`
 plot(my_motion_graph)
@@ -352,11 +354,13 @@ development_motion = subset(development_final, Country %in% selection)
   
 # Create the interactive motion chart with R and `gvisMotionChart())`
 my_motion_graph = gvisMotionChart(development_motion,
-                    idvar = "Country",
-                    timevar = "Year",
-                    xvar = "GDP",
-                    yvar = "Life Expectancy",
-                    sizevar = "Population")
+                                  idvar = "Country",
+                                  timevar = "Year",
+                                  xvar = "GDP",
+                                  yvar = "Life Expectancy",
+                                  sizevar = "Population",
+                                  options=list(height='automatic', 
+                                               width='automatic'))
 
 # Plot your new motion graph with the help of `plot()`
 plot(my_motion_graph)
@@ -412,11 +416,13 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/googlevis/googlevis
 
 # Create the interactive motion chart with R and `gvisMotionChart())`
 my_motion_graph = gvisMotionChart(development_motion,
-                    idvar = "Country",
-                    timevar = "Year",
-                    xvar = ___,
-                    yvar = "Life Expectancy",
-                    sizevar = "Population")
+                                 idvar = "Country",
+                                 timevar = "Year",
+                                 xvar = ___,
+                                 yvar = "Life Expectancy",
+                                 sizevar = "Population",
+                                 options=list(height='automatic', 
+                                               width='automatic'))
 
 # Plot your new motion graph with the help of `plot()`
 ```
@@ -428,11 +434,13 @@ development_motion$logGDP = log(development_motion$GDP)
 
 # Create the interactive motion chart with R and `gvisMotionChart())`
 my_motion_graph = gvisMotionChart(development_motion,
-                    idvar = "Country",
-                    timevar = "Year",
-                    xvar = "logGDP",
-                    yvar = "Life Expectancy",
-                    sizevar = "Population")
+                                  idvar = "Country",
+                                  timevar = "Year",
+                                  xvar = "logGDP",
+                                  yvar = "Life Expectancy",
+                                  sizevar = "Population",
+                                  options=list(height='automatic', 
+                                               width='automatic'))
 
 # Plot your new motion graph with the help of `plot()`
 plot(my_motion_graph)
