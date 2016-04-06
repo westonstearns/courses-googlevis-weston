@@ -505,4 +505,5 @@ my_motion_graph_log = gvisMotionChart(development_motion,idvar = "Country",timev
 msg <- "Have another look at your graph. Use the hint if you need extra help."
 okmsg <- "Wunderbar! We hope you enjoyed doing this demo on DataCamp. In the future we plan to do more courses on using interactive visualizations to analyze and present your data via R and googleVis. In the mean time, keep practicing, and maybe you can, sometime, share the stage with Hans Rosling."
 test_mc(2, c(msg, okmsg, msg, msg))
+success_msg("Congrats on completing this course! You can find tons of other ways to visualize to visualize data using R [here on our courses page](https://www.datacamp.com/courses?learn=data_visualization)!")
 ```
