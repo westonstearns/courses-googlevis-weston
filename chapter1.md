@@ -210,7 +210,7 @@ success_msg("Looks like your data is ready to rumble! Time to make Hans Rosling 
 --- type:NormalExercise lang:r xp:100 skills:1,4
 ##  googleVis - the prelude
 
-Time to start the magic! In the next exercises you will be introduced to the [`googleVis`](http://www.rdocumentation.org/packages/googleVis) package. This package provides an interface between R and the [Google Chart Tools](https://developers.google.com/chart/). As with every package, `googleVis` contains functions. Here they will allow you to visualize data with the Google Chart Tools without uploading your data to Google. 
+Time to start the magic! In the next exercises you will be introduced to the [`googleVis`](http://www.rdocumentation.org/packages/googleVis) package. This package provides an interface between R and the [Google Chart Tools](https://developers.google.com/chart/). As with every package, `googleVis` give you access to various functions. Here they will allow you to visualize data with the Google Chart Tools without uploading your data to Google. 
 
 For this demo chapter you will need to create your first motion chart. A motion chart is a dynamic chart that will allow you to explore several indicators over time. To create a motion chart with the [`googleVis`](http://www.rdocumentation.org/packages/googleVis) package, you will need to use the [`gvisMotionChart()`](http://www.rdocumentation.org/packages/googleVis) function (what's in a name?). The beauty of this function is in its simplicity to use, and the huge range of tweaks you can do to prettify your graph.  
 
@@ -391,7 +391,7 @@ success_msg("Fantastic! The plot looks great, but you could make one more adjust
 --- type:NormalExercise lang:r xp:100 skills:1,4
 ##  googleVis - final output
 
-That last plot looked awesome! We should make one more adjustment to the plot to see if we can improve it. It looks like the relationship between our `GDP` and `Life Expectancy` is non-linear. Lets try to make a transformation of the data to makethe plot easier to read. 
+That last plot looked awesome! You should try to make one more adjustment to the plot to see if you can improve it. It looks like the relationship between our `GDP` and `Life Expectancy` is non-linear. Try to make a transformation to the data to make the plot easier to read. 
 
 
 *** =instructions
