@@ -391,7 +391,7 @@ success_msg("Fantastic! The plot looks great, but you could make one more adjust
 --- type:NormalExercise lang:r xp:100 skills:1,4
 ##  googleVis - final output
 
-That last plot looked awesome! You should try to make one more adjustment to the plot to see if you can improve it. It looks like the relationship between our `GDP` and `Life Expectancy` is non-linear. Try to make a transformation to the data to make the plot easier to read. 
+That last plot looked awesome! There is clearly a relationship between a country's GDP per capita and life expectancy at birth. However, it looks like the relationship is non-linear. You should make a transformation to the data to see if you can make the plot easier to read. 
 
 
 *** =instructions
@@ -409,6 +409,7 @@ library("plyr")
 library("googleVis")
 options(gvis.plot.tag = 'chart')
 load(url("http://s3.amazonaws.com/assets.datacamp.com/course/googlevis/googlevis_ex5.RData"))
+load(url("http://s3.amazonaws.com/assets.datacamp.com/course/googlevis/Country_Mapping.RData"))
 ```
 
 *** =sample_code
