@@ -288,7 +288,7 @@ test_function("plot",
 #                     incorrect_msg = "Make sure to use `plot()` to display `my_motion_graph`!")
 
 test_error()
-success_msg("Bellissimo! Take some time to enjoy the fruits of your labor and play around with the motion chart! In the next exercise you will place the icing on the cake.")
+success_msg("Bellissimo! Take some time to enjoy the fruits of your labor and play around with the motion chart! In the next exercise you will start to place the icing on the cake.")
 ```
 
 --- type:NormalExercise lang:r xp:100 skills:1,4
@@ -383,7 +383,7 @@ test_function("plot",
               not_called_msg = "Do not forget to plot your new motion graph!")
 
 test_error()
-success_msg("Isnt't that beautiful! Probably the best stats you've ever seen. Again, play around with the graph and get a good understanding of what it represents. Then head to the final question...")
+success_msg("Fantastic! The plot looks great, but you could make one more adjustment to make the plot a little easier to see.")
 ```
 
 --- type:NormalExercise lang:r xp:100 skills:1,4
