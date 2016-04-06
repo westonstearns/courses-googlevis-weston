@@ -394,7 +394,7 @@ That last plot looked awesome! We should make one more adjustment to the plot to
 
 *** =instructions
 - Create a new column in `development_motion` that corresponds to the log of the GDP column called "logGDP".
-- The code you wrote for `my_motion_graph` in the previous exercise is provided. Change the x-axis argument to our newly created logGDP column. 
+- The code you wrote for `my_motion_graph_log` in the previous exercise is provided. Change the x-axis argument to our newly created logGDP column. 
 - Do not forget to plot your new motion chart.
 
 *** =hint
@@ -415,7 +415,7 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/googlevis/googlevis
 
 
 # Create the interactive motion chart with R and `gvisMotionChart())`
-my_motion_graph = gvisMotionChart(development_motion,
+my_motion_graph_log = gvisMotionChart(development_motion,
                         idvar = "Country",
                         timevar = "Year",
                         xvar = ___,
@@ -433,7 +433,7 @@ my_motion_graph = gvisMotionChart(development_motion,
 development_motion$logGDP = log(development_motion$GDP)
 
 # Create the interactive motion chart with R and `gvisMotionChart())`
-my_motion_graph = gvisMotionChart(development_motion,
+my_motion_graph_log = gvisMotionChart(development_motion,
                         idvar = "Country",
                         timevar = "Year",
                         xvar = "logGDP",
@@ -494,6 +494,7 @@ options(gvis.plot.tag = 'chart')
 load(url("http://s3.amazonaws.com/assets.datacamp.com/course/googlevis/googlevis_ex5.RData"))
 development_motion$logGDP = log(development_motion$GDP)
 my_motion_graph = gvisMotionChart(development_motion,idvar = "Country",timevar = "Year",xvar = "GDP",yvar = "Life Expectancy",sizevar = "Population", options = list(width = 'automatic', height = 'automatic'))
+my_motion_graph_log = gvisMotionChart(development_motion,idvar = "Country",timevar = "Year",xvar = "logGDP",yvar = "Life Expectancy",sizevar = "Population",options=list(height='automatic', width='automatic'))
 ```
 
 *** =sct
