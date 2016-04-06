@@ -333,10 +333,9 @@ development_motion = subset(development_final, Country %in% selection)
 my_motion_graph = gvisMotionChart(development_motion,
                     idvar = "Country",
                     timevar = "Year",
-                    ___,
-                    ___,
-                    ___,
-                    ___
+                    xvar = "GDP",
+                    yvar = "Life Expectancy",
+                    sizevar = "Population"
 )
 
 # Plot you new motion graph with the help of `plot()`
