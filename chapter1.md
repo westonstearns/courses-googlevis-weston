@@ -409,7 +409,7 @@ library("plyr")
 library("googleVis")
 options(gvis.plot.tag = 'chart')
 load(url("http://s3.amazonaws.com/assets.datacamp.com/course/googlevis/googlevis_ex5.RData"))
-load(url("http://s3.amazonaws.com/assets.datacamp.com/course/googlevis/Country_Mapping.RData"))
+#load(url("http://s3.amazonaws.com/assets.datacamp.com/course/googlevis/Country_Mapping.RData"))
 ```
 
 *** =sample_code
