@@ -304,7 +304,6 @@ Time to set this into action...
 *** =instructions
 - The code you wrote for `my_motion_graph` in the previous exercise is provided. Add the required additional arguments. 
 - Make sure the x-axis of your motion chart represents the GDP of a country, and the y-axis is life expectancy.  
-- The bubble color should depend on the country it represents.
 - The bubble size should increase if a country has a larger number of citizens.  
 - Do not forget to plot your new motion chart.
 
