@@ -383,18 +383,18 @@ success_msg("Isnt't that beautiful! Probably the best stats you've ever seen. Ag
 
 As mentioned in the beginning, the goal of these charts is (not only) to impress your audience, but also to visualize trends and to provide a more clear view on the data and the corresponding insights. 
 
-To test your understanding of the data, you end this demo chapter by solving the following multiple choice question: "What was de GDP of Germany in 1980, and what was the population size at that time?"   
+To test your understanding of the data, you end this demo chapter by solving the following multiple choice question: "What was the GDP of Germany in 1980, and what was the population size at that time?"   
 
-<i> All the datasets and variables you constructed in the previous exercises are preloaded in your workspace.  Type 'ls()' in the console to see them.</i>
+<i> All of the datasets and variables you constructed in the previous exercises are preloaded in your workspace.  Type 'ls()' in the console to see them.</i>
 
 *** =instructions
 - 81,653,702 Germans producing a GDP of 11,746
-- 78,297,904 Germans producing a GDP of 11,746
-- 78,297,904 Germans producing a GDP of 72,2
-- 81,653,702 Germans producing a GDP of 30,888
+- 78,297,904 Germans producing a GDP of 12,092
+- 78,297,904 Germans producing a GDP of 72.7
+- 81,653,702 Germans producing a GDP of 30.89
 
 *** =hint
-You can still have a look at your interactive motion chart by typing `plot(my_motion_graph_avanced)` into the console. 
+You can still have a look at your interactive motion chart by typing `plot(my_motion_graph)` into the console. 
 
 *** =pre_exercise_code
 ```{r}
@@ -415,7 +415,7 @@ development_final = development[development$Year <= 2008,]
 development_final$Country <-as.character(development_final$Country)
 selection <- c("Afghanistan","Australia","Austria","Belgium","Bolivia","Brazil","Cambodia","Azerbaijan", "Chile","China","Denmark","Estonia","Ethiopia","Finland","France","Georgia","Germany","Ghana","Greece","India","Indonesia","Iraq","Italy","Japan","Lithuania","Luxembourg","Mexico","New Zealand", "Niger", "Norway", "Poland", "Portugal","Rwanda", "Somalia", "South Africa", "Spain", "Sweden", "Switzerland", "Turkey","Uganda", "Ukraine", "United Kingdom", "United States", "Vietnam")
 development_motion = subset(development_final, Country %in% selection)
-my_motion_graph = gvisMotionChart(development_motion,idvar = "Country",timevar = "Year",xvar = "GDP",yvar = "Life Expectancy",colorvar = "Country",sizevar = "Population")
+my_motion_graph = gvisMotionChart(development_motion,idvar = "Country",timevar = "Year",xvar = "GDP",yvar = "Life Expectancy",sizevar = "Population")
 ```
 
 *** =sct
