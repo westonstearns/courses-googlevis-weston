@@ -324,21 +324,22 @@ selection <- c("Afghanistan","Australia","Austria","Belgium","Bolivia","Brazil",
 
 *** =sample_code
 ```{r}
-
 # Include only the countries from `selection` in the interactive motion chart
 selection
 development_motion = subset(development_final, Country %in% selection)
   
-# Create the interactive motion chart with R and `gvisMotionChart)`
+# Create the interactive motion chart with R and `gvisMotionChart())`
 my_motion_graph = gvisMotionChart(development_motion,
                     idvar = "Country",
                     timevar = "Year",
-                    xvar = "GDP",
-                    yvar = "Life Expectancy",
-                    sizevar = "Population"
+                    xvar = ___,
+                    ___,
+                    ___,
+                    ___
 )
 
-# Plot you new motion graph with the help of `plot()`
+# Plot your new motion graph with the help of `plot()`
+plot(my_motion_graph)
 ```
 
 *** =solution
@@ -357,7 +358,7 @@ my_motion_graph = gvisMotionChart(development_motion,
                     sizevar = "Population"
 )
 
-# Plot you motion graph with the help of `plot()`
+# Plot your new motion graph with the help of `plot()`
 plot(my_motion_graph)
 ```
 
