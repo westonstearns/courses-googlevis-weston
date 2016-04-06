@@ -429,7 +429,7 @@ selection
 development_motion = subset(development_final, Country %in% selection)
   
 # Create a new column that corresponds to the log of the GDP column
-my_motion_graph$logGDP = log(my_motion_graph$GDP)
+development_motion$logGDP = log(development_motion$GDP)
 
 # Create the interactive motion chart with R and `gvisMotionChart())`
 my_motion_graph = gvisMotionChart(development_motion,
