@@ -113,11 +113,13 @@ success_msg("Good job! Now that you've imported the data, continue to the next e
 
 Now you have the following three different datasets at your disposal: `life_expectancy`, `gdp`, and `population`. As of now, these datasets will always be preloaded in all the exercises' workspace so you can access and use them at anytime.  
 
-If you've applied the [`head()`](http://www.rdocumentation.org/packages/multivator/functions/head) and/or [`tail()`](http://www.rdocumentation.org/packages/multivator/functions/head) function to these variables (if not, you can still do it via the console), you've probably noticed that:  
+If you've applied the [`head()`](http://www.rdocumentation.org/packages/multivator/functions/head) and/or [`tail()`](http://www.rdocumentation.org/packages/multivator/functions/head) function to these variables you've probably noticed that: 
+
 - Not all column names are named properly: the string "Value" is used to name the GDP value, the life expectancy value, and the population value. It would be better if you could make these more descriptive and unique for each. (Tip: use `names()` to see the column names of a dataset.) 
 - Our data is only complete until 2008. 
 
-This is something that should be fixed before you can start creating your graph. In addition, if you want to map all three development statistics into one interactive graph (and since this is extremely cool you definitely want to do this), it is necessary to merge our three data frames into one: `development`. One standard way to do this is as follows:
+These issues should should be fixed before you start creating your graph. In addition, if you want to map all three development statistics into one interactive graph (and you should because it is extremely cool), you will have to merge your three data frames into one called `development`. One standard way to do this is as follows:
+
 `development = merge(gdp,life_expectancy, by = c("Country","Year"))`
 `development = merge(development,population, by = c("Country","Year"))`
 
@@ -129,7 +131,7 @@ However, in this exercise you will be required to do it with the [`join()`](http
 - Take a subset from the `development` dataset that does not include the values after 2008. Name this new dataset `development_final`. Then output the final few rows of the data frame with `tail()`.
 
 *** =hint
-Joining our three data frames into one is very easy in this case. If you have 3 datasets to join, `data_one`, `data_two` and `data_three`, on all common variables, you go in steps: `data_total = join(data_one,data_two)` and then `data_total = join(data_total,data_three)`. So every `join()` only needs two arguments here.    
+Joining our three data frames into one is very easy in this case. If you have 3 datasets to join, `data_one`, `data_two` and `data_three`, on all common variables, you go in steps: `data_total = join(data_one, data_two)` and then `data_total = join(data_total, data_three)`. So every `join()` only needs two arguments here.    
 
 We only need to provide 2 arguments to the `join()` function: 
 
