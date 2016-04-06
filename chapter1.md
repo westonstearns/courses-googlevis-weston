@@ -415,7 +415,7 @@ development_final = development[development$Year <= 2008,]
 development_final$Country <-as.character(development_final$Country)
 selection <- c("Afghanistan","Australia","Austria","Belgium","Bolivia","Brazil","Cambodia","Azerbaijan", "Chile","China","Denmark","Estonia","Ethiopia","Finland","France","Georgia","Germany","Ghana","Greece","India","Indonesia","Iraq","Italy","Japan","Lithuania","Luxembourg","Mexico","New Zealand", "Niger", "Norway", "Poland", "Portugal","Rwanda", "Somalia", "South Africa", "Spain", "Sweden", "Switzerland", "Turkey","Uganda", "Ukraine", "United Kingdom", "United States", "Vietnam")
 development_motion = subset(development_final, Country %in% selection)
-my_motion_graph = gvisMotionChart(development_motion,idvar = "Country",timevar = "Year",xvar = "GDP",yvar = "Life Expectancy",sizevar = "Population", options = list(width = 'automatic', height = 'automatic')
+my_motion_graph = gvisMotionChart(development_motion,idvar = "Country",timevar = "Year",xvar = "GDP",yvar = "Life Expectancy",sizevar = "Population", options = list(width = 'automatic', height = 'automatic'))
 ```
 
 *** =sct
