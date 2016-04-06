@@ -397,16 +397,11 @@ library("rdatamarket")
 library("plyr")
 library("googleVis")
 options(gvis.plot.tag = 'chart')
-load(url("http://s3.amazonaws.com/assets.datacamp.com/course/googlevis/googlevis_ex4.RData"))
-selection <- c("Afghanistan","Australia","Austria","Belgium","Bolivia","Brazil","Cambodia","Azerbaijan", "Chile","China","Denmark","Estonia","Ethiopia","Finland","France","Georgia","Germany","Ghana","Greece","India","Indonesia","Iraq","Italy", "Japan","Lithuania","Luxembourg","Mexico","New Zealand", "Niger", "Norway", "Poland", "Portugal","Rwanda", "Somalia", "South Africa", "Spain", "Sweden", "Switzerland", "Turkey", "Uganda", "Ukraine", "United Kingdom", "United States", "Vietnam")
+load(url("http://s3.amazonaws.com/assets.datacamp.com/course/googlevis/googlevis_ex5.RData"))
 ```
 
 *** =sample_code
 ```{r}
-# Include only the countries from `selection` in the interactive motion chart
-selection
-development_motion = subset(development_final, Country %in% selection)
-  
 # Create a new column that corresponds to the log of the GDP column
 
 
@@ -423,10 +418,6 @@ my_motion_graph = gvisMotionChart(development_motion,
 
 *** =solution
 ```{r}
-# Include only the countries from `selection` in the interactive motion chart
-selection
-development_motion = subset(development_final, Country %in% selection)
-  
 # Create a new column that corresponds to the log of the GDP column
 development_motion$logGDP = log(development_motion$GDP)
 
@@ -487,7 +478,7 @@ library("plyr")
 library("googleVis")
 options(gvis.plot.tag = 'chart')
 load(url("http://s3.amazonaws.com/assets.datacamp.com/course/googlevis/googlevis_ex5.RData"))
-my_motion_graph$logGDP = log(my_motion_graph$GDP)
+development_motion$logGDP = log(development_motion$GDP)
 life_expectancy = dmlist("15r2!hrp")
 gdp = dmlist("15c9!hd1")
 population = dmlist("1cfl!r3d")
