@@ -133,7 +133,7 @@ However, in this exercise you will be required to do it with the [`join()`](http
 *** =hint
 Joining our three data frames into one is very easy in this case. If you have 3 datasets to join, `data_one`, `data_two` and `data_three`, on all common variables, you go in steps: `data_total = join(data_one, data_two)` and then `data_total = join(data_total, data_three)`. So every `join()` only needs two arguments here.    
 
-We only need to provide 2 arguments to the `join()` function: 
+We only need to provide 2 arguments to the `join()` function in this exercise.
 
 
 *** =pre_exercise_code
@@ -210,7 +210,7 @@ success_msg("Looks like your data is ready to rumble! Time to make Hans Rosling 
 --- type:NormalExercise lang:r xp:100 skills:1,4
 ##  googleVis - the prelude
 
-Time to start the magic! In the next exercises you will be introduced to the [`googleVis`](http://www.rdocumentation.org/packages/googleVis) package. This package provides an interface between R and the [Google Chart Tools](https://developers.google.com/chart/). As every package it contains functions, and here they will allow you to visualize data with the Google Chart Tools without uploading their data to Google. 
+Time to start the magic! In the next exercises you will be introduced to the [`googleVis`](http://www.rdocumentation.org/packages/googleVis) package. This package provides an interface between R and the [Google Chart Tools](https://developers.google.com/chart/). As with every package, `googleVis` contains functions. Here they will allow you to visualize data with the Google Chart Tools without uploading your data to Google. 
 
 For this demo chapter you will need to create your first motion chart. A motion chart is a dynamic chart that will allow you to explore several indicators over time. To create a motion chart with the [`googleVis`](http://www.rdocumentation.org/packages/googleVis) package, you will need to use the [`gvisMotionChart()`](http://www.rdocumentation.org/packages/googleVis) function (what's in a name?). The beauty of this function is in its simplicity to use, and the huge range of tweaks you can do to prettify your graph.  
 
