@@ -294,6 +294,7 @@ When working with a simple dataset to visualize, a single color and size for eac
 To make the motion chart even more understandable you can play with the size and color of each bubble. This way you can present more information into one motion chart. Doing this with googleVis is not that hard, again, you only have to play a little bit with the arguments. 
 
 Let's say you want to make a motion chart that displays the GDP of a country on the x-as and the life expectancy on the y-as. Furthermore, you think it would be nice if each country has a unique color, and the size of each bubble represents the size of the population of that country. Doing this via the `gvisMotionChart()` function, will require adding 3 additional arguments to our existing function:
+
 - xvar = Here you place the column name of the variable to be plotted on the x-axis
 - yvar = Here you place the column name of the variable to be plotted on the y-axis 
 - sizevar = Here you provide the column name that will make the bubbles change size. 
