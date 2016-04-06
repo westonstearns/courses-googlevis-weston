@@ -493,18 +493,18 @@ library("googleVis")
 options(gvis.plot.tag = 'chart')
 load(url("http://s3.amazonaws.com/assets.datacamp.com/course/googlevis/googlevis_ex5.RData"))
 development_motion$logGDP = log(development_motion$GDP)
-life_expectancy = dmlist("15r2!hrp")
-gdp = dmlist("15c9!hd1")
-population = dmlist("1cfl!r3d")
-names(gdp)[3] = "GDP"
-names(life_expectancy)[3] = "Life Expectancy"
-names(population)[3] = "Population"
-development = join(gdp,life_expectancy)
-development= join(development,population)
-development_final = development[development$Year <= 2008,]
-development_final$Country <-as.character(development_final$Country)
-selection <- c("Afghanistan","Australia","Austria","Belgium","Bolivia","Brazil","Cambodia","Azerbaijan", "Chile","China","Denmark","Estonia","Ethiopia","Finland","France","Georgia","Germany","Ghana","Greece","India","Indonesia","Iraq","Italy","Japan","Lithuania","Luxembourg","Mexico","New Zealand", "Niger", "Norway", "Poland", "Portugal","Rwanda", "Somalia", "South Africa", "Spain", "Sweden", "Switzerland", "Turkey","Uganda", "Ukraine", "United Kingdom", "United States", "Vietnam")
-development_motion = subset(development_final, Country %in% selection)
+#life_expectancy = dmlist("15r2!hrp")
+#gdp = dmlist("15c9!hd1")
+#population = dmlist("1cfl!r3d")
+#names(gdp)[3] = "GDP"
+#names(life_expectancy)[3] = "Life Expectancy"
+#names(population)[3] = "Population"
+#development = join(gdp,life_expectancy)
+#development= join(development,population)
+#development_final = development[development$Year <= 2008,]
+#development_final$Country <-as.character(development_final$Country)
+#selection <- c("Afghanistan","Australia","Austria","Belgium","Bolivia","Brazil","Cambodia","Azerbaijan", #"Chile","China","Denmark","Estonia","Ethiopia","Finland","France","Georgia","Germany","Ghana","Greece","India","Indonesia",#"Iraq","Italy","Japan","Lithuania","Luxembourg","Mexico","New Zealand", "Niger", "Norway", "Poland", "Portugal","Rwanda", #"Somalia", "South Africa", "Spain", "Sweden", "Switzerland", "Turkey","Uganda", "Ukraine", "United Kingdom", "United #States", "Vietnam")
+#development_motion = subset(development_final, Country %in% selection)
 my_motion_graph = gvisMotionChart(development_motion,idvar = "Country",timevar = "Year",xvar = "GDP",yvar = "Life Expectancy",sizevar = "Population", options = list(width = 'automatic', height = 'automatic'))
 ```
 
