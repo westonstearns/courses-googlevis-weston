@@ -296,7 +296,7 @@ success_msg("Bellissimo! Take some time to enjoy the fruits of your labor and pl
 --- type:NormalExercise lang:r xp:100 skills:1,4
 ##  googleVis - the interlude
 
-When working with a simple dataset to visualize, a single color and size for each observation is sufficient. But what if you like to know more? For example, how can you see at a glance which dot respresents which country in your motion chart? Or how these different dots are proportionate to each other? 
+When working with a simple dataset to visualize, a single color and size for each observation is sufficient. But what if you like to know more? For example, how can you see at a glance which dots respresents which countries in your motion chart? Or how these different dots are proportionate to each other? 
 
 To make the motion chart even more understandable you can play with the size and color of each bubble. This way you can present more information into one motion chart. Doing this with googleVis is not that hard, again, you only have to play a little bit with the arguments. 
 
