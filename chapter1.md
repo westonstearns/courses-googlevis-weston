@@ -398,7 +398,7 @@ That last plot looked awesome! We should make one more adjustment to the plot to
 - Do not forget to plot your new motion chart.
 
 *** =hint
-The four arguments you should add are xvar = "logGDP" to the `gvisMotionChart()` function
+The argument you need to add is xvar = "logGDP" to the `gvisMotionChart()` function
 
 *** =pre_exercise_code
 ```{r}
