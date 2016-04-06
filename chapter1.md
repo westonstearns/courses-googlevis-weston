@@ -445,7 +445,7 @@ my_motion_graph_log = gvisMotionChart(development_motion,
                                      width='automatic'))
 
 # Plot your new motion graph with the help of `plot()`
-plot(my_motion_graph)
+plot(my_motion_graph_log)
 ```
 
 *** =sct
