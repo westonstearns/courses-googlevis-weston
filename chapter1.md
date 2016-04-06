@@ -334,9 +334,7 @@ my_motion_graph = gvisMotionChart(development_motion,
                     timevar = "Year",
                     xvar = ___,
                     ___,
-                    ___,
-                    ___
-)
+                    ___)
 
 # Plot your new motion graph with the help of `plot()`
 plot(my_motion_graph)
@@ -354,9 +352,7 @@ my_motion_graph = gvisMotionChart(development_motion,
                     timevar = "Year",
                     xvar = "GDP",
                     yvar = "Life Expectancy",
-                    colorvar = "Country",
-                    sizevar = "Population"
-)
+                    sizevar = "Population")
 
 # Plot your new motion graph with the help of `plot()`
 plot(my_motion_graph)
