@@ -111,14 +111,14 @@ success_msg("Good job! Now that you've imported the data, continue to the next e
 --- type:NormalExercise lang:r xp:100 skills:1,4
 ##  Preparing the data
 
-Now you have the following three different datasets at your disposal: `life_expectancy`, `gdp`, and `population`. As of now, these datasets will always be preloaded in all the exercises' workspace so you can access and use them at anytime.  
+Now you have the following three different datasets at your disposal: `life_expectancy`, `gdp`, and `population`. As of now, these datasets will always be preloaded in all the exercises' workspace so you can access and use them at any time.  
 
 If you've applied the [`head()`](http://www.rdocumentation.org/packages/multivator/functions/head) and/or [`tail()`](http://www.rdocumentation.org/packages/multivator/functions/head) function to these variables you've probably noticed that: 
 
 - Not all column names are named properly: the string "Value" is used to name the GDP value, the life expectancy value, and the population value. It would be better if you could make these more descriptive and unique for each. (Tip: use `names()` to see the column names of a dataset.) 
 - Our data is only complete until 2008. 
 
-These issues should should be fixed before you start creating your graph. In addition, if you want to map all three development statistics into one interactive graph (and you should because it is extremely cool), you will have to merge your three data frames into one called `development`. One standard way to do this is as follows:
+These issues should be fixed before you start creating your graph. In addition, if you want to map all three development statistics into one interactive graph (and you should because it is extremely cool), you will have to merge your three data frames into one called `development`. One standard way to do this is as follows:
 
 `development = merge(gdp,life_expectancy, by = c("Country","Year"))`
 `development = merge(development,population, by = c("Country","Year"))`
@@ -210,9 +210,9 @@ success_msg("Looks like your data is ready to rumble! Time to make Hans Rosling 
 --- type:NormalExercise lang:r xp:100 skills:1,4
 ##  googleVis - the prelude
 
-Time to start the magic! In the next exercises you will be introduced to the [`googleVis`](http://www.rdocumentation.org/packages/googleVis) package. This package provides an interface between R and the [Google Chart Tools](https://developers.google.com/chart/). As with every package, `googleVis` give you access to various functions. Here they will allow you to visualize data with the Google Chart Tools without uploading your data to Google. 
+Time to start the magic! In the next exercises, you will be introduced to the [`googleVis`](http://www.rdocumentation.org/packages/googleVis) package. This package provides an interface between R and the [Google Chart Tools](https://developers.google.com/chart/). As with every package, `googleVis` give you access to various functions. Here they will allow you to visualize data with the Google Chart Tools without uploading your data to Google. 
 
-For this demo chapter you will need to create your first motion chart. A motion chart is a dynamic chart that will allow you to explore several indicators over time. To create a motion chart with the [`googleVis`](http://www.rdocumentation.org/packages/googleVis) package, you will need to use the [`gvisMotionChart()`](http://www.rdocumentation.org/packages/googleVis) function (what's in a name?). The beauty of this function is in its simplicity to use, and the huge range of tweaks you can do to prettify your graph.  
+For this demo chapter, you will need to create your first motion chart. A motion chart is a dynamic chart that will allow you to explore several indicators over time. To create a motion chart with the [`googleVis`](http://www.rdocumentation.org/packages/googleVis) package, you will need to use the [`gvisMotionChart()`](http://www.rdocumentation.org/packages/googleVis) function (what's in a name?). The beauty of this function is in its simplicity to use, and the huge range of tweaks you can do to prettify your graph.  
 
 The `gvisMotionChart()` function in its simplest form takes 3 arguments. The first argument you need to provide is your data frame `development_final`. Next, you assign the subject to be analyzed to the `idvar` argument, and to the `timevar` argument the column name that contains the time dimension data. Et voila, your first motion chart with `googleVis` is ready!  
 
@@ -300,7 +300,7 @@ When working with a simple dataset to visualize, a single color and size for eac
 
 To make the motion chart even more understandable you can play with the size and color of each bubble. This way you can present more information into one motion chart. Doing this with googleVis is not that hard, again, you only have to play a little bit with the arguments. 
 
-Let's say you want to make a motion chart that displays the GDP of a country on the x-as and the life expectancy on the y-axis. Furthermore, you think it would be nice if each country has a unique color, and the size of each bubble represents the size of the population of that country. Doing this via the `gvisMotionChart()` function, will require adding 3 additional arguments to our existing function:
+Let's say you want to make a motion chart that displays the GDP of a country on the x-as and the life expectancy on the y-axis. Furthermore, you think it would be nice if each country has a unique color, and the size of each bubble represents the size of the population of that country. Doing this via the `gvisMotionChart()` function will require adding 3 additional arguments to our existing function:
 
 - xvar = Here you place the column name of the variable to be plotted on the x-axis
 - yvar = Here you place the column name of the variable to be plotted on the y-axis 
@@ -467,7 +467,7 @@ test_function("plot",
               not_called_msg = "Do not forget to plot your new motion graph!")
 
 test_error()
-success_msg("Isnt't that beautiful! Probably the best stats you've ever seen. Again, play around with the graph and get a good understanding of what it represents. Then head to the final question...")
+success_msg("Isn't that beautiful! Probably the best stats you've ever seen. Again, play around with the graph and get a good understanding of what it represents. Then head to the final question...")
 ```
 
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1,4
@@ -503,7 +503,7 @@ my_motion_graph_log = gvisMotionChart(development_motion,idvar = "Country",timev
 *** =sct
 ```{r,eval=FALSE}
 msg <- "Have another look at your graph. Use the hint if you need extra help."
-okmsg <- "Wunderbar! We hope you enjoyed doing this demo on DataCamp. In the future we plan to do more courses on using interactive visualizations to analyze and present your data via R and googleVis. In the mean time, keep practicing, and maybe you can, sometime, share the stage with Hans Rosling."
+okmsg <- "Wunderbar! We hope you enjoyed doing this demo on DataCamp. In the future, we plan to do more courses on using interactive visualizations to analyze and present your data via R and googleVis. In the meantime, keep practicing, and maybe you can, sometime, share the stage with Hans Rosling."
 test_mc(2, c(msg, okmsg, msg, msg))
 success_msg("Congrats on making some seriously awesome graphs! You can learn tons of other ways to visualize data using R [here on our courses page](https://www.datacamp.com/courses?learn=data_visualization) !")
 ```
