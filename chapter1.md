@@ -254,9 +254,9 @@ library("plyr")
 #Make sure no data beyond 2008 is included and inspect the tail of the data frame
 development_final <-
 
-# Include only the countries from `selection` in the interactive motion chart
+# Include only the countries from `selection` in `development_motion`
 selection
-development_motion = subset(development_final, Country %in% selection)
+development_motion <- subset(development_final, Country %in% selection)
   
 ```
 
@@ -269,9 +269,9 @@ library("plyr")
 development_final <- development[development$Year <= 2008,]
 tail(development_final)
 
-# Include only the countries from `selection` in the interactive motion chart
+# Include only the countries from `selection` in `development_motion`
 selection
-development_motion = subset(development_final, Country %in% selection)
+development_motion <- subset(development_final, Country %in% selection)
 
 ```
 
@@ -342,7 +342,7 @@ my_motion_graph = gvisMotionChart(___,
 ```{r}
 # Include only the countries from `selection` in the interactive motion chart
 selection
-development_motion = subset(development_final, Country %in% selection)
+development_motion <- subset(development_final, Country %in% selection)
   
 # Create the interactive motion chart with R and `gvisMotionChart`
 my_motion_graph = gvisMotionChart(development_motion,
@@ -416,7 +416,7 @@ selection <- c("Afghanistan","Australia","Austria","Belgium","Bolivia","Brazil",
 ```{r}
 # Include only the countries from `selection` in the interactive motion chart
 selection
-development_motion = subset(development_final, Country %in% selection)
+development_motion <- subset(development_final, Country %in% selection)
   
 # Create the interactive motion chart with R and `gvisMotionChart())`
 my_motion_graph = gvisMotionChart(development_motion,
@@ -436,7 +436,7 @@ plot(my_motion_graph)
 ```{r}
 # Include only the countries from `selection` in the interactive motion chart
 selection
-development_motion = subset(development_final, Country %in% selection)
+development_motion <- subset(development_final, Country %in% selection)
   
 # Create the interactive motion chart with R and `gvisMotionChart())`
 my_motion_graph = gvisMotionChart(development_motion,
