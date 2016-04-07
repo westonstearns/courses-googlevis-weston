@@ -217,11 +217,11 @@ Now that you have merged your data, it would make sense to trim the data set. Yo
 
 One way to do this would be to make use of the `subset()` function. You can use this function to pull values from your data frame based on sets of conditions. For example, if you want to see only observations from 2005:
 
-`development_2005 <- subset(development, Year == 2005)`
+`dev_2005 <- subset(development, Year == 2005)`
 
 Then if you want to see only countries that had a population of 2,000,000 or more:
 
-`development_2005_large <- subset(development_2005, population >= 2000000)`
+`dev_2005_big <- subset(dev_2005, Population >= 2000000)`
 
 Feel free to type `?subset` in the console to read more on how to use the function.
 
