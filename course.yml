@@ -1,10 +1,13 @@
 title            : Demo course on the googleVis package
 author_field     : Weston Stearns
 description      : In this demonstration, you will learn how to use the googleVis package in R to create a series 
-  of beautiful interactive chart. Package description - googleVis provides an interface between R and the Google Chart Tools API. It allows users to create web pages with interactive charts based on R data frames using the Google Chart Tools and to display them either via the local R HTTP help server or within their own sites without uploading the data to Google.
+  of beautiful interactive chart. <\n> Package description - googleVis provides an interface between R and the Google Chart 
+  Tools API. It allows users to create web pages with interactive charts based on R data frames using the Google Chart 
+  Tools and to display them either via the local R HTTP help server or within their own sites without uploading the data to 
+  Google.
 author_bio       : Weston is a member of the DataCamp team and all around stats guy. He is passionate about making 
-  education efficient and accessible through technology. He hold a degree in statistics from Harvard where he also served
-    as a teaching fellow.
+  education efficient and accessible through technology. He hold a degree in statistics from Harvard where he also served 
+  as a teaching fellow.
 university       : DataCamp
 difficulty_level : 1
 time_needed      : 1 hour
