@@ -205,7 +205,7 @@ test_function("join",
 test_output_contains("tail(development_final)", 
                      incorrect_msg = "Don't forget to inspect the last few rows of `development_final`. The output should not contain any observations after 2008 and 5 newly renamed columns.")
 
-success_msg("Looks like your data is ready to rumble! Time to make Hans Rosling proud.")
+success_msg("Your data is almost ready! Only one more set of data preparations and you can start to make some sweet visualizations!")
 ```
 
 --- type:NormalExercise lang:r xp:100 skills:1,4
@@ -227,11 +227,10 @@ Feel free to type `?subset` in the console to read more on how to use the functi
 
 *** =instructions
 - Take a subset from the `development` dataset that does not include the values after 2008. Name this new dataset `development_final`. Then output the final few rows of the data frame with `tail()`.
-- To make sure the graph is not too busy, you will work with a subset of only a few countries. These countries are stored in the variable `selection`. Take a subset from `dataframe_final` with only the countries from `selection` and name this dataset `development_motion`. The operator `%in` will be helpful here.
+- To make sure the graph is not too busy, you will work with a subset of only a few countries. These countries are stored in the variable `selection`. Take a subset from `development` with only the countries in `selection` and name this dataset `development_motion`. The operator `%in` will be helpful here.
 
 *** =hint
-Joining our three data frames into one is very easy in this case. If you have 3 datasets to join, `data_one`, `data_two` and `data_three`, on all common variables, you go in steps: `data_total = join(data_one, data_two)` and then `data_total = join(data_total, data_three)`. So every `join()` only needs two arguments here.
-
+Remember to use `subset()` to pull only years >= 2008 particular values from `development`. Then, make use of the `%in%` operator to only select values from the Country column that are in `selection`.
 
 *** =pre_exercise_code
 
@@ -272,8 +271,6 @@ development_motion <- subset(development, Country %in% selection)
 
 *** =sct
 ```{r}
-test_error()
-
 # Instruction 1
 test_output_contains("tail(development)", 
                      incorrect_msg = "Don't forget to inspect the last few rows of `development`. The output should not contain any observations after 2008 and 5 columns.")
@@ -283,6 +280,7 @@ test_object("development_motion",
             undefined_msg = "Make sure you have taken a subset from `development` including only the countries in `selection`.",
             incorrect_msg = "You still need to work with a subset from `development`. Use the `subset()` function and the `selection` variable. ")
 
+test_error()
 success_msg("Looks like your data is ready to rumble! Time to make Hans Rosling proud.")
 ```
 
@@ -302,7 +300,7 @@ The `gvisMotionChart()` function in its simplest form takes 3 arguments. The fir
 - Use the [`plot()`](http://www.rdocumentation.org/packages/Rssa/functions/plot) function to visualize your first motion graph. 
 
 *** =hint
-The `idvar` argument should be equal to "Country" and the `timevar` argument to "Year". Your function will now look something like `gvisMotionChart(data,idvar = "Country",timevar = "Year"). 
+The `idvar` argument should be equal to "Country" and the `timevar` argument to "Year". 
 
 *** =pre_exercise_code
 ```{r,eval=FALSE}
