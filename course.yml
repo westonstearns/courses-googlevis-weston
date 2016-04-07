@@ -6,8 +6,8 @@ description      : In this demonstration, you will learn how to use the googleVi
   provides an interface between R and the Google Charts Tools, allowing you to create interactive web charts from R 
   without uploading your data to Google. You can check out the latest googleVis news at co-author Markus Gesmann's 
   <a href="http://www.magesblog.com/search/label/googleVis", target="_blank">blog</a>. 
-author_bio       : Weston is a member of the DataCamp team and all around stats guy. He is passionate about making 
-  education efficient and accessible through technology. He hold a degree in statistics from Harvard where he also served 
+author_bio       : Weston is a member of the DataCamp team and all-around stats guy. He is passionate about making 
+  education efficient and accessible through technology. He holds a degree in statistics from Harvard where he also served 
   as a teaching fellow.
 university       : DataCamp
 difficulty_level : 1
