@@ -210,13 +210,10 @@ success_msg("Looks like your data is ready to rumble! Time to make Hans Rosling 
 
 --- type:NormalExercise lang:r xp:100 skills:1,4
 ##  Last data preps
+Now that you have merged your data, it would make sense to trim the data set. You can do this in 2 ways:
 
-Now you have the following three different datasets at your disposal: `life_expectancy`, `gdp`, and `population`. As of now, these datasets will always be preloaded in all the exercises' workspace so you can access and use them at any time.  
-
-If you've applied the [`head()`](http://www.rdocumentation.org/packages/multivator/functions/head) and/or [`tail()`](http://www.rdocumentation.org/packages/multivator/functions/head) function to these variables you've probably noticed that: 
-
-- Not all column names are named properly: the string "Value" is used to name the GDP value, the life expectancy value, and the population value. It would be better if you could make these more descriptive and unique for each. (Tip: use `names()` to see the column names of a dataset.) 
-- Our data is only complete until 2008. 
+- Take out data for years you know that have incomplete observations. In this case, the data is only complete up until 2008.
+- Trim down the data set to include fewer countries. Your dataframe `development` currently contains observations about 226 countries per year. That could be a bit messy to plot on one graph. 
 
 These issues should be fixed before you start creating your graph. In addition, if you want to map all three development statistics into one interactive graph (and you should because it is extremely cool), you will have to merge your three data frames into one called `development`. One standard way to do this is as follows:
 
@@ -226,9 +223,8 @@ These issues should be fixed before you start creating your graph. In addition, 
 However, in this exercise you will be required to do it with the [`join()`](http://www.rdocumentation.org/packages/adehabitatMA/html/join.html) function from the [`plyr()`](http://www.rdocumentation.org/packages/plyr/functions/plyr) package. You can read more on how to use the `join` function by typing `?join` in your console.      
 
 *** =instructions
-- The code to rename the column name "Value" to "GDP" for the `gdp` dataset is provided. Now rename the column name "Value" in the other two datasets to respectively "Population" and "Life Expectancy".
-- Use `plyr()` and its `join()` function to merge our three data frames into one data frame `development`. In this case, you want to join on all common variables: "Country" and "Year". Joining on all common variables means the `by` argument is not required.   
 - Take a subset from the `development` dataset that does not include the values after 2008. Name this new dataset `development_final`. Then output the final few rows of the data frame with `tail()`.
+- To make sure the graph is not too busy, you will work with a subset of only a few countries. These countries are stored in the variable `selection`. Take a subset from `dataframe_final` with only the countries from `selection` and name this dataset `development_motion`
 
 *** =hint
 Joining our three data frames into one is very easy in this case. If you have 3 datasets to join, `data_one`, `data_two` and `data_three`, on all common variables, you go in steps: `data_total = join(data_one, data_two)` and then `data_total = join(data_total, data_three)`. So every `join()` only needs two arguments here.
@@ -260,7 +256,7 @@ development_final <-
 # Include only the countries from `selection` in `development_motion`
 selection
 development_motion <- subset(development_final, Country %in% selection)
-  
+
 ```
 
 *** =solution
@@ -270,12 +266,11 @@ library("plyr")
 
 #Make sure no data beyond 2008 is included and inspect the tail of the data frame
 development_final <- development[development$Year <= 2008,]
-tail(development_final)
+tail(development_final) 
 
 # Include only the countries from `selection` in `development_motion`
 selection
 development_motion <- subset(development_final, Country %in% selection)
-
 ```
 
 *** =sct
