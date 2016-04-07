@@ -95,10 +95,10 @@ test_or(
                              incorrect_msg = "Did you print the start and/or the end of the life expectancies data frame to the console?")
    
 # Instruction 3
-test_object("gdp", c("data"),
+test_object("gdp",
             undefined_msg = "Did you assign to `gdp` to the evolution of a country's gdp over the past years?",
             incorrect_msg = "Have a look at how the variable `life_expectancy` is created. You should do something similar for gdp.")
-test_function("dmlist", 
+test_function("dmlist",  c("data"),
               incorrect_msg = "Have a look at how the variable `life_expectancy` is created. Remember to use the key `15c9!hd1`")
 
 # Instruction 4
