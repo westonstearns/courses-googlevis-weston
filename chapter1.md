@@ -134,9 +134,7 @@ However, in this exercise you will be required to do it with the [`join()`](http
 - Take a subset from the `development` dataset that does not include the values after 2008. Name this new dataset `development_final`. Then output the final few rows of the data frame with `tail()`.
 
 *** =hint
-Joining our three data frames into one is very easy in this case. If you have 3 datasets to join, `data_one`, `data_two` and `data_three`, on all common variables, you go in steps: `data_total = join(data_one, data_two)` and then `data_total = join(data_total, data_three)`. So every `join()` only needs two arguments here.    
-
-We only need to provide 2 arguments to the `join()` function in this exercise.
+Joining our three data frames into one is very easy in this case. If you have 3 datasets to join, `data_one`, `data_two` and `data_three`, on all common variables, you go in steps: `data_total = join(data_one, data_two)` and then `data_total = join(data_total, data_three)`. So every `join()` only needs two arguments here.
 
 
 *** =pre_exercise_code
@@ -161,7 +159,7 @@ development <- join(gdp, ___)
 development <- join(___, ___)
 
 #Make sure no data beyond 2008 is included and inspect the tail of the data frame
-development_final = 
+development_final <-
 ```
 
 *** =solution
@@ -206,6 +204,88 @@ test_function("join",
 # Instruction 3
 test_output_contains("tail(development_final)", 
                      incorrect_msg = "Don't forget to inspect the last few rows of `development_final`. The output should not contain any observations after 2008 and 5 newly renamed columns.")
+
+success_msg("Looks like your data is ready to rumble! Time to make Hans Rosling proud.")
+```
+
+--- type:NormalExercise lang:r xp:100 skills:1,4
+##  Last data preps
+
+Now you have the following three different datasets at your disposal: `life_expectancy`, `gdp`, and `population`. As of now, these datasets will always be preloaded in all the exercises' workspace so you can access and use them at any time.  
+
+If you've applied the [`head()`](http://www.rdocumentation.org/packages/multivator/functions/head) and/or [`tail()`](http://www.rdocumentation.org/packages/multivator/functions/head) function to these variables you've probably noticed that: 
+
+- Not all column names are named properly: the string "Value" is used to name the GDP value, the life expectancy value, and the population value. It would be better if you could make these more descriptive and unique for each. (Tip: use `names()` to see the column names of a dataset.) 
+- Our data is only complete until 2008. 
+
+These issues should be fixed before you start creating your graph. In addition, if you want to map all three development statistics into one interactive graph (and you should because it is extremely cool), you will have to merge your three data frames into one called `development`. One standard way to do this is as follows:
+
+`development = merge(gdp,life_expectancy, by = c("Country","Year"))`
+`development = merge(development,population, by = c("Country","Year"))`
+
+However, in this exercise you will be required to do it with the [`join()`](http://www.rdocumentation.org/packages/adehabitatMA/html/join.html) function from the [`plyr()`](http://www.rdocumentation.org/packages/plyr/functions/plyr) package. You can read more on how to use the `join` function by typing `?join` in your console.      
+
+*** =instructions
+- The code to rename the column name "Value" to "GDP" for the `gdp` dataset is provided. Now rename the column name "Value" in the other two datasets to respectively "Population" and "Life Expectancy".
+- Use `plyr()` and its `join()` function to merge our three data frames into one data frame `development`. In this case, you want to join on all common variables: "Country" and "Year". Joining on all common variables means the `by` argument is not required.   
+- Take a subset from the `development` dataset that does not include the values after 2008. Name this new dataset `development_final`. Then output the final few rows of the data frame with `tail()`.
+
+*** =hint
+Joining our three data frames into one is very easy in this case. If you have 3 datasets to join, `data_one`, `data_two` and `data_three`, on all common variables, you go in steps: `data_total = join(data_one, data_two)` and then `data_total = join(data_total, data_three)`. So every `join()` only needs two arguments here.
+
+
+*** =pre_exercise_code
+
+```{r,eval=FALSE}
+library("rdatamarket")
+library("plyr")
+load(url("http://s3.amazonaws.com/assets.datacamp.com/course/googlevis/googlevis_ex3.RData"))
+selection <- c("Afghanistan","Australia","Austria","Belgium","Bolivia","Brazil","Cambodia","Azerbaijan", "Chile","China","Denmark","Estonia","Ethiopia","Finland","France","Georgia","Germany","Ghana","Greece","India","Indonesia","Iraq","Italy", "Japan","Lithuania","Luxembourg","Mexico","New Zealand", "Niger", "Norway", "Poland", "Portugal","Rwanda", "Somalia", "South Africa", "Spain", "Sweden", "Switzerland", "Turkey", "Uganda", "Ukraine", "United Kingdom", "United States", "Vietnam")
+```
+
+*** =sample_code
+```{r}
+# load in the `plyr` package
+library("plyr")
+
+#Make sure no data beyond 2008 is included and inspect the tail of the data frame
+development_final <-
+
+# Include only the countries from `selection` in the interactive motion chart
+selection
+development_motion = subset(development_final, Country %in% selection)
+  
+```
+
+*** =solution
+```{r}
+# load in the `plyr` package
+library("plyr")
+
+#Make sure no data beyond 2008 is included and inspect the tail of the data frame
+development_final <- development[development$Year <= 2008,]
+tail(development_final)
+
+# Include only the countries from `selection` in the interactive motion chart
+selection
+development_motion = subset(development_final, Country %in% selection)
+
+
+```
+
+
+*** =sct
+```{r}
+test_error()
+
+# Instruction 1
+test_output_contains("tail(development_final)", 
+                     incorrect_msg = "Don't forget to inspect the last few rows of `development_final`. The output should not contain any observations after 2008 and 5 newly renamed columns.")
+                     
+# Instruction 2
+test_object("development_motion",
+            undefined_msg = "Make sure you have taken a subset from `development_final` including only the countries in `selection`.",
+            incorrect_msg = "You still need to work with a subset from `development_final`. Use the `subset()` function and the `selection` variable. ")
 
 success_msg("Looks like your data is ready to rumble! Time to make Hans Rosling proud.")
 ```
