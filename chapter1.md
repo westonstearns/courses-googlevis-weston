@@ -364,7 +364,7 @@ Time to set this into action...
 - Do not forget to plot your new motion chart.
 
 *** =hint
-The four arguments you should add are xvar = "GDP", yvar = "Life Expectancy", colorvar = "Country",and sizevar = "Population".
+You need to set three additional arguments in `gvisMotionChart()`: `xvar`, `yvar`, and `sizevar`. Check out the arguments you have already set.
 
 *** =pre_exercise_code
 ```{r}
@@ -433,7 +433,7 @@ That last plot looked awesome! There is clearly a relationship between a country
 - Do not forget to plot your new motion chart.
 
 *** =hint
-The argument you need to add is xvar = "logGDP" to the `gvisMotionChart()` function
+The argument you need to set the argument `xvar` to the log of GDP in the `gvisMotionChart()` function
 
 *** =pre_exercise_code
 ```{r}
