@@ -2,7 +2,7 @@ title            : Demo course on the googleVis package
 author_field     : Weston Stearns
 description      : In this demonstration, you will learn how to use the googleVis package in R to create a series 
   of beautiful interactive chart. The charts created in these exercises are inspired by the work of statistics guru 
-  <a href="http://www.ted.com/speakers/hans_rosling">Hans Rosling</a>. Package description - googleVis provides an interface between R and the Google Chart 
+  <a href="http://www.ted.com/speakers/hans_rosling", target="_blank">Hans Rosling</a>. Package description - googleVis provides an interface between R and the Google Chart 
   Tools API. It allows users to create web pages with interactive charts based on R data frames using the Google Chart 
   Tools and to display them either via the local R HTTP help server or within their own sites without uploading the data to 
   Google.
