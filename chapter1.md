@@ -130,8 +130,7 @@ However, in this exercise you will be required to do it with the [`join()`](http
 
 *** =instructions
 - The code to rename the column name "Value" to "GDP" for the `gdp` dataset is provided. Now rename the column name "Value" in the other two datasets to respectively "Population" and "Life Expectancy".
-- Use `plyr()` and its `join()` function to merge our three data frames into one data frame `development`. In this case, you want to join on all common variables: "Country" and "Year". Joining on all common variables means the `by` argument is not required.   
-- Take a subset from the `development` dataset that does not include the values after 2008. Name this new dataset `development_final`. Then output the final few rows of the data frame with `tail()`.
+- Use `plyr()` and its `join()` function to merge our three data frames into one data frame `development`. In this case, you want to join on all common variables: "Country" and "Year". Joining on all common variables means the `by` argument is not required.
 
 *** =hint
 Joining our three data frames into one is very easy in this case. If you have 3 datasets to join, `data_one`, `data_two` and `data_three`, on all common variables, you go in steps: `data_total = join(data_one, data_two)` and then `data_total = join(data_total, data_three)`. So every `join()` only needs two arguments here.
@@ -157,9 +156,6 @@ names(gdp)[3] <- "GDP"
 # Use plyr to join your three data frames into one: development 
 development <- join(gdp, ___)
 development <- join(___, ___)
-
-#Make sure no data beyond 2008 is included and inspect the tail of the data frame
-development_final <-
 ```
 
 *** =solution
@@ -175,10 +171,6 @@ names(population)[3] <- "Population"
 # Use plyr to join your three data frames into one: `development` 
 development <- join(gdp,life_expectancy)
 development <- join(development,population)
-
-#Make sure no data beyond 2008 is included and inspect the tail of the data frame
-development_final <- development[development$Year <= 2008,]
-tail(development_final)
 ```
 
 
@@ -201,10 +193,6 @@ test_data_frame("population",
 test_function("join",
             incorrect_msg = "Looks like you did not use the join() formula to correctly to merge your data frames.")
 
-# Instruction 3
-test_output_contains("tail(development_final)", 
-                     incorrect_msg = "Don't forget to inspect the last few rows of `development_final`. The output should not contain any observations after 2008 and 5 newly renamed columns.")
-
 success_msg("Your data is almost ready! Only one more set of data preparations and you can start to make some sweet visualizations!")
 ```
 
@@ -213,7 +201,7 @@ success_msg("Your data is almost ready! Only one more set of data preparations a
 Now that you have merged your data, it would make sense to trim the data set. You can do this in 2 ways:
 
 - Take out data for years you know that have incomplete observations. In this case, the data is only complete up until 2008.
-- Trim down the data set to include fewer countries. Your dataframe `development` currently loaded and contains observations about 226 countries per year. That could be a bit messy to plot on one graph. 
+- Trim down the data set to include fewer countries. Your dataframe `development` is currently loaded and contains observations about 226 countries per year. That could be a bit messy to plot on one graph. 
 
 One way to do this would be to make use of the `subset()` function. You can use this function to pull values from your data frame based on sets of conditions. For example, if you want to see only observations from 2005:
 
@@ -291,7 +279,9 @@ Time to start the magic! In the next exercises, you will be introduced to the [`
 
 For this exercise, you will need to create your first motion chart. A motion chart is a dynamic chart that will allow you to explore several indicators over time. To create a motion chart with the [`googleVis`](http://www.rdocumentation.org/packages/googleVis) package, you will need to use the [`gvisMotionChart()`](http://www.rdocumentation.org/packages/googleVis) function (what's in a name?). The beauty of this function is in its simplicity to use, and the huge range of tweaks you can do to prettify your graph.  
 
-The `gvisMotionChart()` function in its simplest form takes 3 arguments. The first argument you need to provide is your data frame `development_final`. Next, you assign the subject to be analyzed to the `idvar` argument, and to the `timevar` argument the column name that contains the time dimension data. Et voila, your first motion chart with `googleVis` is ready!  
+The `gvisMotionChart()` function in its simplest form takes 3 arguments. The first argument you need to provide is your data frame `development_motion` (which is pre-loaded). Next, you assign the subject to be analyzed to the `idvar` argument, and to the `timevar` argument the column name that contains the time dimension data. Et voila, your first motion chart with `googleVis` is ready! 
+
+Note: the `options=list()` argument is necessary here to fit better in your viewing screen. 
 
 *** =instructions
 - Use the `gvisMotionChart()` function to create an interactive motion chart with R. Assign the output to `my_motion_graph`. What column names do you need to provide to the `idvar` and `timevar` if you know that the Hans Rosling moving bubbles represent countries, and their movement is based on the date?
@@ -302,22 +292,15 @@ The `idvar` argument should be equal to "Country" and the `timevar` argument to 
 
 *** =pre_exercise_code
 ```{r,eval=FALSE}
-library("rdatamarket")
-library("plyr")
 library("ggvis")
 library("googleVis")
 options(gvis.plot.tag = 'chart')
 load(url("http://s3.amazonaws.com/assets.datacamp.com/course/googlevis/googlevis_ex3.RData"))
-selection <- c("Afghanistan","Australia","Austria","Belgium","Bolivia","Brazil","Cambodia","Azerbaijan", "Chile","China","Denmark","Estonia","Ethiopia","Finland","France","Georgia","Germany","Ghana","Greece","India","Indonesia","Iraq","Italy", "Japan","Lithuania","Luxembourg","Mexico","New Zealand", "Niger", "Norway", "Poland", "Portugal","Rwanda", "Somalia", "South Africa", "Spain", "Sweden", "Switzerland", "Turkey", "Uganda", "Ukraine", "United Kingdom", "United States", "Vietnam")
 ```
 
 
 *** =sample_code
 ```{r}
-# Include only the countries from `selection` in the interactive motion chart
-selection
-development_motion = 
-  
 # Create the interactive motion chart with R and `gvisMotionChart`
 my_motion_graph = gvisMotionChart(___,
                         ___,
@@ -331,10 +314,6 @@ my_motion_graph = gvisMotionChart(___,
 
 *** =solution
 ```{r}
-# Include only the countries from `selection` in the interactive motion chart
-selection
-development_motion <- subset(development_final, Country %in% selection)
-  
 # Create the interactive motion chart with R and `gvisMotionChart`
 my_motion_graph = gvisMotionChart(development_motion,
                         idvar = "Country",
@@ -348,17 +327,12 @@ plot(my_motion_graph)
 
 *** =sct
 ```{r}
-# Instruction 1
-test_object("development_motion",
-            undefined_msg = "Make sure you have taken a subset from `development_final` including only the countries in `selection`.",
-            incorrect_msg = "You still need to work with a subset from `development_final`. Use the `subset()` function and the `selection` variable. ")
-
-# Instructions 2 and 3
+# Instructions 1
 test_function("gvisMotionChart", c("data", "idvar", "timevar"), eval = FALSE, 
               not_called_msg = "You should use the `gvisMotionChart()` function in this exercise.",
               incorrect_msg = "Mmmm. There is something fishy with your `gvisMotionChart()` function. It doesn't return a result. Check the hint if you need help.")
 
-# Instruction 4
+# Instruction 2
 test_function("plot",
               not_called_msg = "Do not forget to plot your new motion graph!")
 #test_output_contains("plot(my_motion_graph)",
@@ -394,12 +368,9 @@ The four arguments you should add are xvar = "GDP", yvar = "Life Expectancy", co
 
 *** =pre_exercise_code
 ```{r}
-library("rdatamarket")
-library("plyr")
 library("googleVis")
 options(gvis.plot.tag = 'chart')
 load(url("http://s3.amazonaws.com/assets.datacamp.com/course/googlevis/googlevis_ex4.RData"))
-selection <- c("Afghanistan","Australia","Austria","Belgium","Bolivia","Brazil","Cambodia","Azerbaijan", "Chile","China","Denmark","Estonia","Ethiopia","Finland","France","Georgia","Germany","Ghana","Greece","India","Indonesia","Iraq","Italy", "Japan","Lithuania","Luxembourg","Mexico","New Zealand", "Niger", "Norway", "Poland", "Portugal","Rwanda", "Somalia", "South Africa", "Spain", "Sweden", "Switzerland", "Turkey", "Uganda", "Ukraine", "United Kingdom", "United States", "Vietnam")
 ```
 
 
