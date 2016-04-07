@@ -1,4 +1,4 @@
-title            : Demo course on the googleVis package
+title            : Getting Started with googleVis
 author_field     : Weston Stearns
 description      : In this demonstration, you will learn how to use the googleVis package in R to create a series 
   of beautiful interactive chart. The charts created in these exercises are inspired by the work of statistics guru 
