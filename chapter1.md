@@ -226,7 +226,7 @@ Then if you want to see only countries that had a gdp of over 30,000 in 2005:
 Feel free to type `?subset` in the console to read more on how to use the function.
 
 *** =instructions
-- Take a subset from the `development` dataset that does not include the values after 2008. Name this new dataset `development_final`. Then output the final few rows of the data frame with `tail()`.
+- Take a subset from the `development` dataset that does not include the values after 2008. Then output the final few rows of the data frame with `tail()`.
 - To make sure the graph is not too busy, you will work with a subset of only a few countries. These countries are stored in the variable `selection`. Take a subset from `development` with only the countries in `selection` and name this dataset `development_motion`. The operator `%in` will be helpful here.
 
 *** =hint
