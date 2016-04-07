@@ -295,7 +295,7 @@ The `idvar` argument should be equal to "Country" and the `timevar` argument to 
 library("ggvis")
 library("googleVis")
 options(gvis.plot.tag = 'chart')
-load(url("http://s3.amazonaws.com/assets.datacamp.com/course/googlevis/googlevis_ex4.RData"))
+load(url("http://s3.amazonaws.com/assets.datacamp.com/course/googlevis/googlevis_ex5.RData"))
 ```
 
 
@@ -370,16 +370,12 @@ The four arguments you should add are xvar = "GDP", yvar = "Life Expectancy", co
 ```{r}
 library("googleVis")
 options(gvis.plot.tag = 'chart')
-load(url("http://s3.amazonaws.com/assets.datacamp.com/course/googlevis/googlevis_ex4.RData"))
+load(url("http://s3.amazonaws.com/assets.datacamp.com/course/googlevis/googlevis_ex5.RData"))
 ```
 
 
 *** =sample_code
 ```{r}
-# Include only the countries from `selection` in the interactive motion chart
-selection
-development_motion <- subset(development_final, Country %in% selection)
-  
 # Create the interactive motion chart with R and `gvisMotionChart())`
 my_motion_graph = gvisMotionChart(development_motion,
                         idvar = "Country",
@@ -396,10 +392,6 @@ plot(my_motion_graph)
 
 *** =solution
 ```{r}
-# Include only the countries from `selection` in the interactive motion chart
-selection
-development_motion <- subset(development_final, Country %in% selection)
-  
 # Create the interactive motion chart with R and `gvisMotionChart())`
 my_motion_graph = gvisMotionChart(development_motion,
                         idvar = "Country",
