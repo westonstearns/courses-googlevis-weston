@@ -240,6 +240,8 @@ Joining our three data frames into one is very easy in this case. If you have 3 
 library("rdatamarket")
 library("plyr")
 load(url("http://s3.amazonaws.com/assets.datacamp.com/course/googlevis/googlevis_ex2.RData"))
+development <- join(gdp,life_expectancy)
+development <- join(development,population)
 load(url("http://s3.amazonaws.com/assets.datacamp.com/course/googlevis/googlevis_ex3.RData"))
 selection <- c("Afghanistan","Australia","Austria","Belgium","Bolivia","Brazil","Cambodia","Azerbaijan", "Chile","China","Denmark","Estonia","Ethiopia","Finland","France","Georgia","Germany","Ghana","Greece","India","Indonesia","Iraq","Italy", "Japan","Lithuania","Luxembourg","Mexico","New Zealand", "Niger", "Norway", "Poland", "Portugal","Rwanda", "Somalia", "South Africa", "Spain", "Sweden", "Switzerland", "Turkey", "Uganda", "Ukraine", "United Kingdom", "United States", "Vietnam")
 ```
