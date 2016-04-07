@@ -130,7 +130,7 @@ These issues should be fixed before you start creating your graph. In addition, 
 However, in this exercise you will be required to do it with the [`join()`](http://www.rdocumentation.org/packages/adehabitatMA/html/join.html) function from the [`plyr()`](http://www.rdocumentation.org/packages/plyr/functions/plyr) package. You can read more on how to use the `join` function by typing `?join` in your console.      
 
 *** =instructions
-- The code to rename the column name "Value" to "GDP" for the `gdp` dataset is provided. Now rename the column name "Value" in the other two datasets to respectively "Population" and "Life Expectancy".
+- The code to rename the column name "Value" to `"GDP"` for the `gdp` dataset is provided. Now rename the column name "Value" in the other two datasets to respectively `"Population"` and `"Life Expectancy"`.
 - Use `plyr()` and its `join()` function to merge our three data frames into one data frame `development`. In this case, you want to join on all common variables: "Country" and "Year". Joining on all common variables means the `by` argument is not required.
 
 *** =hint
