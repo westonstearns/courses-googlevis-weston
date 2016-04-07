@@ -296,6 +296,7 @@ library("ggvis")
 library("googleVis")
 options(gvis.plot.tag = 'chart')
 load(url("http://s3.amazonaws.com/assets.datacamp.com/course/googlevis/googlevis_ex3.RData"))
+development_motion <- subset(development, Country %in% selection)
 ```
 
 
@@ -327,7 +328,7 @@ plot(my_motion_graph)
 
 *** =sct
 ```{r}
-# Instructions 1
+# Instruction 1
 test_function("gvisMotionChart", c("data", "idvar", "timevar"), eval = FALSE, 
               not_called_msg = "You should use the `gvisMotionChart()` function in this exercise.",
               incorrect_msg = "Mmmm. There is something fishy with your `gvisMotionChart()` function. It doesn't return a result. Check the hint if you need help.")
