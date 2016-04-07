@@ -98,7 +98,7 @@ test_or(
 test_object("gdp",
             undefined_msg = "Did you assign to `gdp` to the evolution of a country's gdp over the past years?",
             incorrect_msg = "Have a look at how the variable `life_expectancy` is created. You should do something similar for gdp.")
-test_function("dmlist", c(".params"), 
+test_function("dmlist", 
               incorrect_msg = "Have a look at how the variable `life_expectancy` is created. Remember to use the key `15c9!hd1`")
 
 # Instruction 4
