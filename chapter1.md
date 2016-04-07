@@ -213,7 +213,7 @@ success_msg("Your data is almost ready! Only one more set of data preparations a
 Now that you have merged your data, it would make sense to trim the data set. You can do this in 2 ways:
 
 - Take out data for years you know that have incomplete observations. In this case, the data is only complete up until 2008.
-- Trim down the data set to include fewer countries. Your dataframe `development` currently contains observations about 226 countries per year. That could be a bit messy to plot on one graph. 
+- Trim down the data set to include fewer countries. Your dataframe `development` currently loaded and contains observations about 226 countries per year. That could be a bit messy to plot on one graph. 
 
 One way to do this would be to make use of the `subset()` function. You can use this function to pull values from your data frame based on sets of conditions. For example, if you want to see only observations from 2005:
 
@@ -227,7 +227,7 @@ Feel free to type `?subset` in the console to read more on how to use the functi
 
 *** =instructions
 - Take a subset from the `development` dataset that does not include the values after 2008. Then output the final few rows of the data frame with `tail()`.
-- To make sure the graph is not too busy, you will work with a subset of only a few countries. These countries are stored in the variable `selection`. Take a subset from `development` with only the countries in `selection` and name this dataset `development_motion`. The operator `%in` will be helpful here.
+- To make sure the graph is not too busy, you will work with a subset of only a few countries. These countries are stored in the variable `selection`. Take a subset from `development` with only the countries in `selection` and name this dataset `development_motion`. The operator `%in%` will be helpful here.
 
 *** =hint
 Remember to use `subset()` to pull only years >= 2008 particular values from `development`. Then, make use of the `%in%` operator to only select values from the Country column that are in `selection`.
@@ -289,14 +289,12 @@ success_msg("Looks like your data is ready to rumble! Time to make Hans Rosling 
 
 Time to start the magic! In the next exercises, you will be introduced to the [`googleVis`](http://www.rdocumentation.org/packages/googleVis) package. This package provides an interface between R and the [Google Chart Tools](https://developers.google.com/chart/). As with every package, `googleVis` give you access to various functions. Here they will allow you to visualize data with the Google Chart Tools without uploading your data to Google. 
 
-For this demo chapter, you will need to create your first motion chart. A motion chart is a dynamic chart that will allow you to explore several indicators over time. To create a motion chart with the [`googleVis`](http://www.rdocumentation.org/packages/googleVis) package, you will need to use the [`gvisMotionChart()`](http://www.rdocumentation.org/packages/googleVis) function (what's in a name?). The beauty of this function is in its simplicity to use, and the huge range of tweaks you can do to prettify your graph.  
+For this exercise, you will need to create your first motion chart. A motion chart is a dynamic chart that will allow you to explore several indicators over time. To create a motion chart with the [`googleVis`](http://www.rdocumentation.org/packages/googleVis) package, you will need to use the [`gvisMotionChart()`](http://www.rdocumentation.org/packages/googleVis) function (what's in a name?). The beauty of this function is in its simplicity to use, and the huge range of tweaks you can do to prettify your graph.  
 
 The `gvisMotionChart()` function in its simplest form takes 3 arguments. The first argument you need to provide is your data frame `development_final`. Next, you assign the subject to be analyzed to the `idvar` argument, and to the `timevar` argument the column name that contains the time dimension data. Et voila, your first motion chart with `googleVis` is ready!  
 
 *** =instructions
-- To make sure the graph is not too busy, you will work with a subset of only a few countries. These countries are stored in the variable `selection`. Take a subset from `dataframe_final` with only the countries from `selection` and name this dataset `development_motion`  
-- Use the `gvisMotionChart()` function to create an interactive motion chart with R. Assign the output to `my_motion_graph`.
-- What are the column names you need to provide to the `idvar` and `timevar` if you know that the Hans Rosling moving bubbles represent countries, and their movement is based on the date?
+- Use the `gvisMotionChart()` function to create an interactive motion chart with R. Assign the output to `my_motion_graph`. What column names do you need to provide to the `idvar` and `timevar` if you know that the Hans Rosling moving bubbles represent countries, and their movement is based on the date?
 - Use the [`plot()`](http://www.rdocumentation.org/packages/Rssa/functions/plot) function to visualize your first motion graph. 
 
 *** =hint
