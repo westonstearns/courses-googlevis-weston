@@ -1,12 +1,11 @@
-title            : Getting Started with googleVis
+title            : Quickly Visualize data with googleVis
 author_field     : Weston Stearns
-description      : In this demonstration, you will learn how to use the googleVis package in R to create a series 
-  of beautiful interactive chart. The charts created in these exercises are inspired by the work of statistics guru 
+description      : In this demonstration, you will learn how to use the googleVis package in R to create a few 
+  beautiful interactive charts. The charts created in these exercises are inspired by the work of statistics guru 
   <a href="http://www.ted.com/speakers/hans_rosling", target="_blank">Hans Rosling</a>. GoogleVis 
-  pprovides an interface between R and the Google Charts Tools, allowing you to create interactive web charts from R 
-  without uploading your data to Google. The charts are displayed by default via the R internal help browser.
-  You can check out the latest googleVis news at co-author Markus Gesmann's 
-  <a href="http://www.magesblog.com/search/label/googleVis", target="_blank">blog</a>.
+  provides an interface between R and the Google Charts Tools, allowing you to create interactive web charts from R 
+  without uploading your data to Google. You can check out the latest googleVis news at co-author Markus Gesmann's 
+  <a href="http://www.magesblog.com/search/label/googleVis", target="_blank">blog</a>. 
 author_bio       : Weston is a member of the DataCamp team and all around stats guy. He is passionate about making 
   education efficient and accessible through technology. He hold a degree in statistics from Harvard where he also served 
   as a teaching fellow.
