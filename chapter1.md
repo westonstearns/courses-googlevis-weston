@@ -240,6 +240,9 @@ Joining our three data frames into one is very easy in this case. If you have 3 
 library("rdatamarket")
 library("plyr")
 load(url("http://s3.amazonaws.com/assets.datacamp.com/course/googlevis/googlevis_ex2.RData"))
+names(gdp)[3] <- "GDP"
+names(life_expectancy)[3] <- "Life Expectancy"
+names(population)[3] <- "Population"
 development <- join(gdp,life_expectancy)
 development <- join(development,population)
 load(url("http://s3.amazonaws.com/assets.datacamp.com/course/googlevis/googlevis_ex3.RData"))
