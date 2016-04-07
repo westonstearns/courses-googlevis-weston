@@ -191,7 +191,7 @@ test_data_frame("population",
 
 # Instruction 2
 test_function("join",
-            incorrect_msg = "Looks like you did not use the join() formula to correctly to merge your data frames.")
+              incorrect_msg = "Looks like you did not use the join() formula to correctly to merge your data frames.")
 
 success_msg("Your data is almost ready! Only one more set of data preparations and you can start to make some sweet visualizations!")
 ```
@@ -408,17 +408,12 @@ plot(my_motion_graph)
 
 *** =sct
 ```{r}
-# Instruction 1 from previous exercise
-test_object("development_motion",
-            undefined_msg = "Make sure you have taken a subset from `development_final` including only the countries in `selection`.",
-            incorrect_msg = "You still need to work with a subset from `development_final`. Use the `subset()` function and the `selection` variable. ")
-
-# Instructions 2 and 3
+# Instructions 1
 test_function("gvisMotionChart", c("data", "idvar", "timevar", "xvar", "yvar", "sizevar") , eval = FALSE, 
               not_called_msg = "You should use the `gvisMotionChart()` function in this exercise.",
-              incorrect_msg = "Mmmm. There is something fishy with your `gvisMotionChart()` function. It doesn't return a result. Check the hint if you need help.")
+              incorrect_msg = "Make sure the `xvar` argument is set to 'GDP' and the `yvar` argument is set to 'Life Expectancy'.")
 
-# Instruction 4
+# Instruction 1
 test_function("plot",
               not_called_msg = "Do not forget to plot your new motion graph!")
 
@@ -498,7 +493,7 @@ test_object("development_motion",
 # Instructions 2 and 3
 test_function("gvisMotionChart", c("data", "idvar", "timevar", "xvar", "yvar", "sizevar") , eval = FALSE, 
               not_called_msg = "You should use the `gvisMotionChart()` function provided in this exercise.",
-              incorrect_msg = "Mmmm. There is something fishy with your `gvisMotionChart()` function. It doesn't return a result. Check the hint if you need help.")
+              incorrect_msg = "Make sure the `xvar` argument is set to the log of the GDP column.")
 
 # Instruction 4
 test_function("plot",
@@ -524,7 +519,7 @@ To test your understanding of the data, you end this demo chapter by solving the
 - 81,653,702 Germans producing a GDP of 30.89
 
 *** =hint
-You can still have a look at your interactive motion chart by typing `plot(my_motion_graph)` into the console. 
+You can still have a look at your interactive motion chart by typing `plot(my_motion_graph)` or `plot(my_motion_graph_log)` into the console. 
 
 *** =pre_exercise_code
 ```{r}
