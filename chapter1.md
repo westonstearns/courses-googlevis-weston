@@ -105,7 +105,7 @@ test_object("gdp",
 test_or(
         test_output_contains("head(population)"), 
         test_output_contains("tail(population)"),
-                             incorrect_msg = "Did you print the start and/or the end of the population data frame to the console?")
+                             incorrect_msg = "Did you print the start and/or the end of the `population` data frame to the console?")
 
 test_error()
 success_msg("Good job! Now that you've imported the data, continue to the next exercise to start the real work.")
