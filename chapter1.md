@@ -249,7 +249,7 @@ selection <- c("Afghanistan","Australia","Austria","Belgium","Bolivia","Brazil",
 
 *** =sample_code
 ```{r}
-# Make sure no data beyond 2008 is included and inspect the tail of the data frame
+# Only include data on or before 2008 and inspect the tail of the data frame
 development <- subset(___, ___)
 
 # Include only the countries from `selection` in `development_motion`
@@ -260,7 +260,7 @@ development_motion <- subset(___, ___)
 
 *** =solution
 ```{r}
-# Make sure no data beyond 2008 is included and inspect the tail of the data frame
+# Only include data on or before 2008 and inspect the tail of the data frame
 development <- subset(development, Year <= 2008)
 tail(development) 
 
