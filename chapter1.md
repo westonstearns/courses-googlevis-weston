@@ -219,9 +219,9 @@ One way to do this would be to make use of the `subset()` function. You can use 
 
 `dev_2005 <- subset(development, Year == 2005)`
 
-Then if you want to see only countries that had a gdp of over 10,000:
+Then if you want to see only countries that had a gdp of over 30,000:
 
-`dev_2005_big <- subset(dev_2005, GDP >= 10000)`
+`dev_2005_big <- subset(dev_2005, GDP >= 30000)`
 
 Feel free to type `?subset` in the console to read more on how to use the function.
 
