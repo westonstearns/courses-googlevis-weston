@@ -107,7 +107,7 @@ test_or(
         test_output_contains("tail(population)"),
                              incorrect_msg = "Did you print the start and/or the end of the `population` data frame to the console?")
 
-test_error()
+test_error(incorrect_msg = msg)
 success_msg("Good job! Now that you've imported the data, continue to the next exercise to start the real work.")
 ```
 
