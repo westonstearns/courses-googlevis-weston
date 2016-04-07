@@ -330,7 +330,7 @@ plot(my_motion_graph)
 # Instruction 1
 test_function("gvisMotionChart", c("data", "idvar", "timevar"), eval = FALSE, 
               not_called_msg = "You should use the `gvisMotionChart()` function in this exercise.",
-              incorrect_msg = "Mmmm. There is something fishy with your `gvisMotionChart()` function. It doesn't return a result. Check the hint if you need help.")
+              incorrect_msg = "Make sure the `idvar` argument is set to 'Country' and the `timevar` argument is set to 'Year'.")
 
 # Instruction 2
 test_function("plot",
