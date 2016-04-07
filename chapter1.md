@@ -96,9 +96,10 @@ test_or(
 # Instruction 3
 test_function("dmlist",
               incorrect_msg = "Have a look at how the variable `life_expectancy` is created. Remember to use the key `15c9!hd1`")
+msg = "Have a look at how the variable `life_expectancy` is created. You should do something similar for gdp using the code `15c9!hd1`"
 test_object("gdp",
-            undefined_msg = "Did you assign to `gdp` to the evolution of a country's gdp over the past years?",
-            incorrect_msg = "Have a look at how the variable `life_expectancy` is created. You should do something similar for gdp using the code `15c9!hd1`")
+            undefined_msg = msg,
+            incorrect_msg = msg)
 
 # Instruction 4
 test_or(
