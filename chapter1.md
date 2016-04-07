@@ -14,7 +14,7 @@ description : In this chapter you will be introduced to gooleVis for R.
 
 What you just saw was one of the most famous ted talks on data and statistics. With the drama and urgency of a sportscaster, statistics guru [Hans Rosling](http://www.ted.com/speakers/hans_rosling) debunks myths about the so-called "developing world". But what sets Rosling apart isn't just his apt observations of broad social and economic trends, but the stunning way he presents them. Have you ever seen data presented like this? The data sings, trends come to life, and the big picture snaps into sharp focus.
 
-In this demo chapter, you will learn how to DIY with the help of R. Step-by-step you will transform development statistics into moving bubbles and flowing curves that make global trends clear, intuitive and even playful.
+In this demonstation, you will learn how to DIY with the help of R. Step-by-step you will transform development statistics into moving bubbles and flowing curves that make global trends clear, intuitive and even playful.
 
 First, you will need to load data on a country's evolution of life expectancy, GDP and population over the past years into R. We can get this data by using [DataMarket](https://datamarket.com/), a company that lets you freely search public data and load it into R with the [`rdatamarket`](http://www.rdocumentation.org/packages/rdatamarket/functions/rdatamarket-package) package. For the data you'll be using here, no account is needed. You will be using two R functions in this exercise:
 
